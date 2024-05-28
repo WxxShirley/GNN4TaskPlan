@@ -1,0 +1,281 @@
+{
+    "nodes": [
+        {
+            "id": "GetCollectionDetail",
+            "desc": "[Collection Detail] Retrieve details for a collection based on its ID.",
+            "raw": "/collection/{collection_id}",
+            "raw_desc": "Get collection details by id"
+        },
+        {
+            "id": "GetCollectionImage",
+            "desc": "[Collection Image] Retrieve a collection's images based on its ID.",
+            "raw": "/collection/{collection_id}/images",
+            "raw_desc": "Get the images for a collection by id"
+        },
+        {
+            "id": "GetCompanyDetail",
+            "desc": "[Company Detail] Retrieve details about a company based on its ID.",
+            "raw": "/company/{company_id}",
+            "raw_desc": "Get a companies details by id"
+        },
+        {
+            "id": "GetCompanyLogo",
+            "desc": "[Company Logo] Retrieve the logos of a company based on its ID.",
+            "raw": "/company/{company_id}/images",
+            "raw_desc": "Get a companies logos by id"
+        },
+        {
+            "id": "DiscoverMovie",
+            "desc": "[Movie Discover] Discover new movies based on RATINGs.",
+            "raw": "/discover/movie",
+            "raw_desc": "Discover movies by different types of data like average rating, number of votes, genres and certifications"
+        },
+        {
+            "id": "GetLatestMovie",
+            "desc": "[Movie Latest] Retrieve information about the most recently created movie.",
+            "raw": "/movie/latest",
+            "raw_desc": "Get the most newly created movie."
+        },
+        {
+            "id": "GetNewPlayingMovie",
+            "desc": "[Movie Playing] Obtain a list of movies currently being shown in theaters.",
+            "raw": "/movie/now_playing",
+            "raw_desc": "Get a list of movies in theatres"
+        },
+        {
+            "id": "GetPopularMovie",
+            "desc": "[Movie Popular] Retrieve a list of currently popular movies.",
+            "raw": "/movie/popular",
+            "raw_desc": "Get a list of the current popular movies on TMDb"
+        },
+        {
+            "id": "GetTopRatedMovie",
+            "desc": "[Movie Top Rated] Obtain a list of the highest-rated movies.",
+            "raw": "/movie/top_rated",
+            "raw_desc": "Get the top rated movies on TMDb"
+        },
+        {
+            "id": "GetMovieDetail",
+            "desc": "[Movie] Retrieve information about a movie using its ID.",
+            "raw": "/movie/{movie_id}",
+            "raw_desc": "Get the primary information about a movie"
+        },
+        {
+            "id": "GetMovieCredit",
+            "desc": "[Movie Credit (Cast&Crew)] Retrieve the cast and crew information for a movie using its ID.",
+            "raw": "/movie/{movie_id}/credits",
+            "raw_desc": "Get the cast and crew for a movie"
+        },
+        {
+            "id": "GetMovieImage",
+            "desc": "[Movie Image] Fetch images of a movie using its ID",
+            "raw": "/movie/{movie_id}/images",
+            "raw_desc": "Get the images that belong to a movie"
+        },
+        {
+            "id": "GetMovieKeyword",
+            "desc": "[Movie Keyword] Retrieve the keywords of a movie using its ID",
+            "raw": "/movie/{movie_id}/keywords",
+            "raw_desc": "Get the keywords that have been added to a movie"
+        },
+        {
+            "id": "MovieRecommendation",
+            "desc": "[Movie Recommendation] Obtain a list of recommended movies related to a particular movie using its ID.",
+            "raw": "/movie/{movie_id}/recommendations",
+            "raw_desc": "Get a list of recommended movies for a movie"
+        },
+        {
+            "id": "GetMovieReleaseDate",
+            "desc": "[Movie Release Date] Retrieve the release date of a movie using its ID.",
+            "raw": "/movie/{movie_id}/release_dates",
+            "raw_desc": "Get the release date along with the certification for a movie"
+        },
+        {
+            "id": "GetMovieReview",
+            "desc": "[Movie Review] Retrieve user reviews for a movie.",
+            "raw": "/movie/{movie_id}/reviews",
+            "raw_desc": "Get the user reviews for a movie"
+        },
+        {
+            "id": "GetSimilarMovie",
+            "desc": "[Movie Similar] Obtain a list of movies that are similar to a particular movie using its ID.",
+            "raw": "/movie/{movie_id}/similar",
+            "raw_desc": "Get a list of similar movies"
+        },
+        {
+            "id": "GetNetworkDetail",
+            "desc": "[Network] Retrieve detailed information about a TV network using its ID.",
+            "raw": "/network/{network_id}",
+            "raw_desc": "Get the details of a network"
+        },
+        {
+            "id": "GetNetworkLogo",
+            "desc": "[Network Logo] Fetch the logos of a TV using ID",
+            "raw": "/network/{network_id}/images",
+            "raw_desc": "Get the TV network logos by id"
+        },
+        {
+            "id": "GetPopularPerson",
+            "desc": "[Person Popular] Retrieve a list of popular individuals.",
+            "raw": "/person/popular",
+            "raw_desc": "Get the list of popular people on TMDb"
+        },
+        {
+            "id": "GetPersonDetail",
+            "desc": "[Person Detail] Retrieve details of a person using ID.",
+            "raw": "/person/{person_id}",
+            "raw_desc": "Get the primary person details by id"
+        },
+        {
+            "id": "GetPersonImage",
+            "desc": "[Person Image] Fetch the images of a person using ID",
+            "raw": "/person/{person_id}/images",
+            "raw_desc": " Get the images for a person"
+        },
+        {
+            "id": "GetPersonMovieCredit",
+            "desc": "[Person Movie Credit] Retrieve the movie credits for a person.",
+            "raw": "/person/{person_id}/movie_credits",
+            "raw_desc": "Get the movie credits for a person, the results contains various information such as popularity and release date."
+        },
+        {
+            "id": "GetPersonTVCredit",
+            "desc": "[Person TV Credit] Retrieve the TV show credits for a person.",
+            "raw": "/person/{person_id}/tv_credits",
+            "raw_desc": "Get the TV show credits for a person."
+        },
+        {
+            "id": "SearchCollection",
+            "desc": "[Search Collection]  Search and find collections.",
+            "raw": "/search/collection",
+            "raw_desc": "Search for collections"
+        },
+        {
+            "id": "SearchCompany",
+            "desc": "[Search Company] Search and find companies.",
+            "raw": "/search/company",
+            "raw_desc": "Search for companies"
+        },
+        {
+            "id": "SearchMovie",
+            "desc": "[Search Movie] Search and find movies.",
+            "raw": "/search/movie",
+            "raw_desc": "Search for movies"
+        },
+        {
+            "id": "SearchPeople",
+            "desc": "[Search People] Search and find movies.",
+            "raw": "/search/person",
+            "raw_desc": "Search for people"
+        },
+        {
+            "id": "SearchTV",
+            "desc": "[Search TV Show] Search and find TV shows.",
+            "raw": "/search/tv",
+            "raw_desc": "Search for a TV show"
+        },
+        {
+            "id": "GetTrendingItem",
+            "desc": "[Trending] Retrieve trending items.",
+            "raw": "/trending/{media_type}/{time_window}",
+            "raw_desc": "Get the daily or weekly trending items"
+        },
+        {
+            "id": "GetOnAirTV",
+            "desc": "[TV On Air]  Obtain a list of TV shows that are currently on the air.",
+            "raw": "/tv/on_the_air",
+            "raw_desc": "Get a list of shows that are currently on the air"
+        },
+        {
+            "id": "GetPopularTVShow",
+            "desc": "[TV Popular] Retrieve a list of the currently popular TV shows.",
+            "raw": "/tv/popular",
+            "raw_desc": "Get a list of the current popular TV shows on TMDb"
+        },
+        {
+            "id": "GetTopRatedTV",
+            "desc": "[TV Top Rated] Obtain a list of the highest-rated TV shows.",
+            "raw": "/tv/top_rated",
+            "raw_desc": "Get a list of the top rated TV shows on TMDb"
+        },
+        {
+            "id": "GetTVDetail",
+            "desc": "[TV] Retrieve details about a TV show using its ID.",
+            "raw": "/tv/{tv_id}",
+            "raw_desc": "Get the primary TV show details by id"
+        },
+        {
+            "id": "GetTVCredit",
+            "desc": "[TV Credit] Retrieve the credits (cast, crew, and director) for a TV",
+            "raw": "/tv/{tv_id}/credits",
+            "raw_desc": "Get the credits (cast and crew) that have been added to a TV show"
+        },
+        {
+            "id": "GetTVImage",
+            "desc": "[TV Image] Fetch the images of a TV show using its ID.",
+            "raw": "/tv/{tv_id}/images",
+            "raw_desc": "Get the images that belong to a TV show"
+        },
+        {
+            "id": "GetTVKeyword",
+            "desc": "[TV Keyword] Retrieve the keywords of a TV show using its ID.",
+            "raw": "/tv/{tv_id}/keywords",
+            "raw_desc": "Get the keywords that have been added to a TV show"
+        },
+        {
+            "id": "GetTVRecommendation",
+            "desc": "[TV Recommendation] Obtain a list of recommended TV shows for a particular TV.",
+            "raw": "/tv/{tv_id}/recommendations",
+            "raw_desc": "Get the list of TV show recommendations for this item"
+        },
+        {
+            "id": "GetTVReview",
+            "desc": "[TV Review] Retrieve reviews for a TV show using its ID.",
+            "raw": "/tv/{tv_id}/reviews",
+            "raw_desc": "Get the reviews for a TV show"
+        },
+        {
+            "id": "GetTVSeasonDetail",
+            "desc": "[TV Season] Retrieve detailed information about a TV season of its season number.",
+            "raw": "/tv/{tv_id}/season/{season_number}",
+            "raw_desc": "Get the TV season details by id"
+        },
+        {
+            "id": "GetTVSeaonCredit",
+            "desc": "[TV Credits based on SEASON] Retrieve the credits (cast and crew) for a TV season using its season number.",
+            "raw": "/tv/{tv_id}/season/{season_number}/credits",
+            "raw_desc": "Get the credits for TV season"
+        },
+        {
+            "id": "GetTVEpisodeDetail",
+            "desc": "[TV Episode] Retrieve detailed information about a TV episode.",
+            "raw": "/tv/{tv_id}/season/{season_number}/episode/{episode_number}",
+            "raw_desc": "Get the TV episode details by id"
+        },
+        {
+            "id": "GetTVEpisodeCredit",
+            "desc": "[TV Credits based on EPISODE]  Retrieve the credits (cast, crew, and guest stars) for a TV episode.",
+            "raw": "/tv/{tv_id}/season/{season_number}/episode/{episode_number}/credits",
+            "raw_desc": "Get the credits (cast, crew and guest stars) for a TV episode"
+        },
+        {
+            "id": "GetTVEpisodeImage",
+            "desc": "[TV Image of EPISODE] Fetch the images of a TV EPISODE.",
+            "raw": "/tv/{tv_id}/season/{season_number}/episode/{episode_number}/images",
+            "raw_desc": "Get the images that belong to a TV episode"
+        },
+        {
+            "id": "GetTVSeaonImage",
+            "desc": "[TV Image of SEASON] Fetch the images of a TV SEASON.",
+            "raw": "/tv/{tv_id}/season/{season_number}/images",
+            "raw_desc": "Get the images that belong to a TV season"
+        },
+        {
+            "id": "GetSimilarTVShow",
+            "desc": "[TV Similar] Obtain a list of TV shows that are similar to a particular TV show using its ID.",
+            "raw": "/tv/{tv_id}/similar",
+            "raw_desc": "Get a list of similar TV shows"
+        }
+        
+    ]
+}

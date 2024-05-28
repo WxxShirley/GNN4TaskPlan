@@ -1,0 +1,188 @@
+{
+    "nodes": [
+        {
+            "desc": "[Collection Detail] Retrieve details for a collection based on its ID.",
+            "id": "GetCollectionDetail"
+        },
+        {
+            "desc": "[Collection Image] Retrieve a collection's images based on its ID.",
+            "id": "GetCollectionImage"
+        },
+        {
+            "desc": "[Company Detail] Retrieve details about a company based on its ID.",
+            "id": "GetCompanyDetail"
+        },
+        {
+            "desc": "[Company Logo] Retrieve the logos of a company based on its ID.",
+            "id": "GetCompanyLogo"
+        },
+        {
+            "desc": "[Movie Discover] Discover new movies based on RATINGs.",
+            "id": "DiscoverMovie"
+        },
+        {
+            "desc": "[Movie Latest] Retrieve information about the most recently created movie.",
+            "id": "GetLatestMovie"
+        },
+        {
+            "desc": "[Movie Playing] Obtain a list of movies currently being shown in theaters.",
+            "id": "GetNewPlayingMovie"
+        },
+        {
+            "desc": "[Movie Popular] Retrieve a list of currently popular movies.",
+            "id": "GetPopularMovie"
+        },
+        {
+            "desc": "[Movie Top Rated] Obtain a list of the highest-rated movies.",
+            "id": "GetTopRatedMovie"
+        },
+        {
+            "desc": "[Movie] Retrieve information about a movie using its ID.",
+            "id": "GetMovieDetail"
+        },
+        {
+            "desc": "[Movie Credit] Retrieve the cast and crew information for a movie using its ID.",
+            "id": "GetMovieCredit"
+        },
+        {
+            "desc": "[Movie Image] Fetch images of a movie using its ID",
+            "id": "GetMovieImage"
+        },
+        {
+            "desc": "[Movie Keyword] Retrieve the keywords of a movie using its ID",
+            "id": "GetMovieKeyword"
+        },
+        {
+            "desc": "[Movie Recommendation] Obtain a list of recommended movies related to a particular movie using its ID.",
+            "id": "MovieRecommendation"
+        },
+        {
+            "desc": "[Movie Release Date] Retrieve the release date of a movie using its ID.",
+            "id": "GetMovieReleaseDate"
+        },
+        {
+            "desc": "[Movie Review] Retrieve user reviews for a movie.",
+            "id": "GetMovieReview"
+        },
+        {
+            "desc": "[Movie Similar] Obtain a list of movies that are similar to a particular movie using its ID.",
+            "id": "GetSimilarMovie"
+        },
+        {
+            "desc": "[Network] Retrieve detailed information about a TV network using its ID.",
+            "id": "GetNetworkDetail"
+        },
+        {
+            "desc": "[Network Logo] Fetch the logos of a TV using ID",
+            "id": "GetNetworkLogo"
+        },
+        {
+            "desc": "[Person Popular] Retrieve a list of popular individuals.",
+            "id": "GetPopularPerson"
+        },
+        {
+            "desc": "[Person Detail] Retrieve details of a person using ID.",
+            "id": "GetPersonDetail"
+        },
+        {
+            "desc": "[Person Image] Fetch the images of a person using ID",
+            "id": "GetPersonImage"
+        },
+        {
+            "desc": "[Perso Movie Credit] Retrieve the movie credits for a person.",
+            "id": "GetPersonMovieCredit"
+        },
+        {
+            "desc": "[Person TV Credit] Retrieve the TV show credits for a person.",
+            "id": "GetPersonTVCredit"
+        },
+        {
+            "desc": "[Search Collection]  Search and find collections.",
+            "id": "SearchCollection"
+        },
+        {
+            "desc": "[Search Company] Search and find companies.",
+            "id": "SearchCompany"
+        },
+        {
+            "desc": "[Search Movie] Search and find movies.",
+            "id": "SearchMovie"
+        },
+        {
+            "desc": "[Search People] Search and find movies.",
+            "id": "SearchPeople"
+        },
+        {
+            "desc": "[Search TV Show] Search and find TV shows.",
+            "id": "SearchTV"
+        },
+        {
+            "desc": "[Trending] Retrieve trending items.",
+            "id": "GetTrendingItem"
+        },
+        {
+            "desc": "[TV On Air]  Obtain a list of TV shows that are currently on the air.",
+            "id": "GetOnAirTV"
+        },
+        {
+            "desc": "[TV Popular] Retrieve a list of the currently popular TV shows.",
+            "id": "GetPopularTVShow"
+        },
+        {
+            "desc": "[TV Top Rated] Obtain a list of the highest-rated TV shows.",
+            "id": "GetTopRatedTV"
+        },
+        {
+            "desc": "[TV] Retrieve details about a TV show using its ID.",
+            "id": "GetTVDetail"
+        },
+        {
+            "desc": "[TV Credit] Retrieve the credits (cast, crew, and director) for a TV",
+            "id": "GetTVCredit"
+        },
+        {
+            "desc": "[TV Image] Fetch the images of a TV show using its ID.",
+            "id": "GetTVImage"
+        },
+        {
+            "desc": "[TV Keyword] Retrieve the keywords of a TV show using its ID.",
+            "id": "GetTVKeyword"
+        },
+        {
+            "desc": "[TV Recommendation] Obtain a list of recommended TV shows for a particular TV.",
+            "id": "GetTVRecommendation"
+        },
+        {
+            "desc": "[TV Review] Retrieve reviews for a TV show using its ID.",
+            "id": "GetTVReview"
+        },
+        {
+            "desc": "[TV Season] Retrieve detailed information about a TV season of its season number.",
+            "id": "GetTVSeasonDetail"
+        },
+        {
+            "desc": "[TV Seanson Credits] Retrieve the credits for a TV season using its season number.",
+            "id": "GetTVSeaonCredit"
+        },
+        {
+            "desc": "[TV Episode] Retrieve detailed information about a TV episode.",
+            "id": "GetTVEpisodeDetail"
+        },
+        {
+            "desc": "[TV Credits based on EPISODE]  Retrieve the credits (cast, crew, and guest stars) for a TV episode.",
+            "id": "GetTVEpisodeCredit"
+        },
+        {
+            "desc": "[TV Image of EPISODE] Fetch the images of a TV EPISODE.",
+            "id": "GetTVEpisodeImage"
+        },
+        {
+            "desc": "[TV Image of SEASON] Fetch the images of a TV SEASON.",
+            "id": "GetTVSeaonImage"
+        },
+        {
+            "desc": "[TV Similar] Obtain a list of TV shows that are similar to a particular TV show using its ID.",
+            "id": "GetSimilarTVShow"
+        }
+    ]
+}
