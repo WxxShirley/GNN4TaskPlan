@@ -62,7 +62,7 @@ Besides, we also provide two improved prompt templates, **2-shot** and **PlaG**,
 ```
 ├── trainfree
 │   ├── direct.py               --> LLM's direct inference
-│   ├── direct_diffprompt.py    --> LLM's direct inference under improved prompts, including 1) more in-context learning examples and 2) plan like a graph (PlaG
+│   ├── direct_diffprompt.py    --> LLM's direct inference under improved prompts, including 1) more in-context learning examples and 2) plan like a graph (PlaG)
 │   ├── graphsearch.py          --> GraphSearch method
 │   └── sgc.py                  --> SGC method
 ```
@@ -71,17 +71,11 @@ Besides, we also provide two improved prompt templates, **2-shot** and **PlaG**,
 
 Running scripts can be found in `trainfree_script.sh`. 
 
-**Hint** You have to first run the Direct Inference to obtain any LLM's direct inference results to faciliate SGC or GraphSearch.
+**Hint** You have to first run the Direct Inference to obtain any LLM's direct inference results to facilitate SGC or GraphSearch.
 
 
 
 ## Fine-tuning LLMs
-
-### Repo Intro 
-
-Codes of fine-tuning LLMs are under the **`finetunellm`** folder:
-* **LLM Fine-tune**  Using LoRA to fine-tune a LLM with training data coming from the ground-truth `<user_request, decomposed task steps, task invocation path>` triplets. During experiments, we fine-tune LLMs of different parameter scales, including **[CodeLLaMA-7B](https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf)** and **[Vicuna-13B](https://huggingface.co/lmsys/vicuna-13b-v1.5)**.
-* **Inference based on Fine-tuned LLMs** Making direct inference based on fine-tuned LLMs. You have to specify the LLM's name and the ckpt_dir. 
 
 ```
 ├── finetunellm
@@ -90,9 +84,11 @@ Codes of fine-tuning LLMs are under the **`finetunellm`** folder:
 │   └── user_prompt.py       --> Instruction Template
 ```
 
-### Reproducibility
+Codes of fine-tuning LLMs are under the **`finetunellm`** folder:
+* **LLM Fine-tune**  Using LoRA to fine-tune a LLM with training data coming from the ground-truth `<user_request, decomposed task steps, task invocation path>` triplets. During experiments, we fine-tune LLMs of different parameter scales, including **[CodeLLaMA-7B](https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf)** and **[Vicuna-13B](https://huggingface.co/lmsys/vicuna-13b-v1.5)**.
+* **Inference based on Fine-tuned LLMs** Making direct inference based on fine-tuned LLMs. You have to specify the LLM's name and the ckpt_dir. 
 
-Running scripts can be found in `finetunellm_script.sh`. We use 2 NVIDIA A100-80G GPUs for fine-tuning LLMs.
+Running scripts can be found in `finetunellm_script.sh` and we use 2 NVIDIA A100-80G GPUs for fine-tuning LLMs.
 
 
 
