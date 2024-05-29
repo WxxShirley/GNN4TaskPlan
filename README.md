@@ -7,10 +7,11 @@ This is the official implementation for paper "Can Graph Learning Improve Task P
 - [Can Graph Learning Improve Task Planning?](#can-graph-learning-improve-task-planning?)
    - [Table of Contents](#table-of-contents)
    - [Environment Setup](#environment-setup)
-       - [(Optional) Deploy Open-sourced LLMs](#(optional)-deploy-open-sourced-llms)
+       - [Deploy Open-sourced LLMs](#deploy-open-sourced-llms)
    - [Training-free Methods](#training-free-methods)
        - [Repo Intro](#repo-intro)
        - [Reproducibility](#reproducibility)
+   - [TODO](#todo)
 
 
 ## Environment Setup
@@ -21,7 +22,7 @@ pip install -r requirements.txt
 
 Run the above command to install required Python packages.
 
-### (Optional) Deploy Open-sourced LLMs
+### Deploy Open-sourced LLMs
 
 For running LLM's direct inference or GraphSearch, our codes are implemented as deploying LLMs as API services using [`FastChat`](https://github.com/lm-sys/FastChat) to the `localhost:8008` endpoint. 
 
@@ -60,15 +61,25 @@ Besides, we also provide two improved prompt templates, **2-shot** and **PlaG**,
 ```
 ├── trainfree
 │   ├── direct.py               --> LLM's direct inference
-│   ├── direct_diffprompt.py    --> LLM's direct inference under improved prompts, including 1) more in-context learning examples and 2) plan like a graph (PlaG)
-│   ├── direct_gpt.py           --> LLM's direct inference specifically for GPT-series 
+│   ├── direct_diffprompt.py    --> LLM's direct inference under improved prompts, including 1) more in-context learning examples and 2) plan like a graph (PlaG
 │   ├── graphsearch.py          --> GraphSearch method
 │   └── sgc.py                  --> SGC method
 ```
 
 ### Reproducibility
 
-Running scripts can be found in `trainfree_scripts.sh`. 
+Running scripts can be found in `trainfree_script.sh`. 
 
 **Hint** You have to first run the Direct Inference to obtain any LLM's direct inference results to faciliate SGC or GraphSearch.
 
+
+
+## TODO 
+
+- [x] [Code] Release all related codes of open-sourced LLMs
+- [ ] [Code] Release training-free codes of GPT-series
+- [ ] [Docs] Provide a Chinese version README
+- [ ] [Code] Provide direct inference results of several LLMs
+- [ ] [Resource] Provide ckpt of both GNN and LM+GNN for reproducibility
+
+      
