@@ -21,6 +21,7 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
        - [Reproducibility](#reproducibility)
    - [Training GNNs](#training-gnns)
    - [Fine-tuning LLMs](#fine-tuning-llms)
+   - [Evaluation](#evaluation)
    - [TODO](#todo)
 
 
@@ -148,6 +149,25 @@ Codes of fine-tuning LLMs are under the **`finetunellm`** folder:
 Running scripts can be found in `finetunellm_script.sh` and we use 2 NVIDIA A100-80G GPUs for fine-tuning LLMs.
 
 
+## Evaluation
+
+`evaluate.py` provides a evaluation of task planning result, and metrics including `Node-F1`, `Link-F1`, `Node-Hallucination` (both Macro and Micro), and `Link-Hallucination` (both Macro and Micro).
+
+To facilitate reproducibility, we have provided the direct inference results of CodeLLaMA-13B and Mistral-7B under the `prediction` folder.
+
+For evaluation, you have to specify the LLM's name, dataset, and the method (for example, `direct` denotes LLM's direct inference):
+```shell 
+python evaluate.py --llm=CodeLlama-13b --dataset=huggingface --method=direct
+```
+
+And the result is as follows (`NF` - Node-F1, `LF` - Link-F1, `NH-1` - Micro Node Hallucination Rate, `NH-2` - Macro Node Hallucination Rate, `LH-1` - Micro Link Hallucination Rate, `LH-2` - Macro Link Hallucination Rate):
+```
++-------------+---------------+-------+--------+--------+--------+--------+--------+--------+
+|   Dataset   |      LLM      |  Mode |   NF   |   LF   |  NH-1  |  NH-2  |  LH-1  |  LH-2  |
++-------------+---------------+-------+--------+--------+--------+--------+--------+--------+
+| huggingface | CodeLlama-13b | chain | 0.5755 | 0.2888 | 0.1656 | 0.4306 | 0.4228 | 0.6338 |
++-------------+---------------+-------+--------+--------+--------+--------+--------+--------+
+```
 
 
 ## TODO 
@@ -155,7 +175,7 @@ Running scripts can be found in `finetunellm_script.sh` and we use 2 NVIDIA A100
 - [x] [Code] Release all related codes of open-sourced LLMs
 - [ ] [Code] Release training-free codes of GPT-series
 - [ ] [Docs] Provide a Chinese version README
-- [ ] [Code] Provide direct inference results of several LLMs
+- [x] [Result] Provide direct inference results of several LLMs
 - [ ] [Resource] Provide ckpt of both GNN and LM+GNN for reproducibility
 
       
