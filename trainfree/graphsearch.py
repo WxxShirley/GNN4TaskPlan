@@ -374,6 +374,7 @@ def main(dataset, api_addr, api_port, llm, strategy, width, threshold, mode, req
 
     url = f"http://{api_addr}:{api_port}/v1/chat/completions"
     
+    # [Important] LLM names must be in this dict's key
     llm_short_names = {
         "CodeLlama-13b-Instruct-hf": "CodeLlama-13b",
         "vicuna-13b-v1.5": "vicuna-13b",

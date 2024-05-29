@@ -90,6 +90,7 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', type=str, default='huggingface', choices=['huggingface', 'multimedia', 'dailylife', 'tmdb'])
     parser.add_argument('--lm_name', type=str, default='intfloat/e5-large', choices=['intfloat/e5-large', 'sentence-transformers/all-roberta-large-v1', 'intfloat/e5-large-v2'])
     parser.add_argument('--lm_pool', type=str, default="cls", choices=['mean', 'cls'])
+    # LLM Choices ['CodeLlama-13b', 'mistral-7b', 'Baichuan-13b', 'CodeLlama-7b', 'vicuna-13b']
     parser.add_argument('--llm_name', type=str, default='CodeLlama-13b')
 
     parser.add_argument('--seed', type=int, default=0)
@@ -122,7 +123,8 @@ if __name__ == "__main__":
             tool_emb_list.append(cur_tool_emb)
 
     alignment_ids = json.load(open(f"../data/{args.dataset}/split_ids.json", 'r'))["test_ids"]["chain"]
-
+    
+    # for "method", you can also replace with other prompting methods
     new_alignment_ids, pred_dict = load_test_data(args.dataset, args.llm_name, init_alignment_ids=alignment_ids, method="direct")
     
     # for computing Hallucination
