@@ -88,8 +88,8 @@ def prompt_llm_final_solutions(llm, url, user_request, parsed_steps, solution_li
     if len(solution_list) == 0:
         return {"best_solution": []}
 
-    prompt = """\n# GOAL #\nBased on the provided USER REQUEST and the initially inferred STEPS (to be performed in sequence to solve the user's request), select the best tool solution list from the SOLUTION LIST. The selected solution should be the one that can perfectly solve the user's request. The format must be in strict JSON format, like: {"best_solution": [list of invoked tools]}"""
-    prompt += """\n\n# REQUIREMENTS #\n1. Your goal is to select the best solution that can perfectly solve user's request and follow initial inferred steps! Only return the best solution strictly from the provided SOLUTION LIST. Do not change their corresponding sequences and strictly align with the content;"""
+    prompt = """\n# GOAL #\nBased on the provided USER REQUEST and the initially inferred STEPS (to be performed in sequence to solve the user's request), select the best tool solution list from the SOLUTION LIST. The selected solution should be the one that can perfectly solve the user's request and strictly align with the inferred steps. The format must be in strict JSON format, like: {"best_solution": [list of invoked tools]}"""
+    prompt += """\n\n# REQUIREMENTS #\n1. Your goal is to select the best solution that can best follow the inferred steps and can perfectly solve user's request! Only return the best solution strictly from the provided SOLUTION LIST. Do not change their corresponding sequences and strictly align with the content;"""
     prompt += """\n2. Carefully analyze both the user's request and the previously inferred task steps. """
     prompt += f"""\n3. Make sure that each tool in the final solution list exists in the valid # TOOL LIST #: {tool_name_list}."""
      
