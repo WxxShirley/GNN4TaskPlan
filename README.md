@@ -15,6 +15,7 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
    - [Table of Contents](#table-of-contents)
    - [Environment Setup](#environment-setup)
        - [Deploy Open-sourced LLMs](#deploy-open-sourced-llms)
+   - [Datasets](#datasets)
    - [Training-free Methods](#training-free-methods)
        - [Code Intro](#code-intro)
        - [Reproducibility](#reproducibility)
@@ -55,6 +56,23 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
   
   python3 -m fastchat.serve.openai_api_server --host 127.0.0.1 --port 8008
   ```
+
+
+## Datasets
+
+Four experimental datasets (HuggingFace, Multimedia, Daily Life from [TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md), and TMDB from [RestBench](https://github.com/Yifan-Song793/RestGPT)) are under the **`data`** folder. 
+
+Each dataset contains the following files:
+* `data.json` Detailed dataset, with each sample has a user request, ground-truth decomposed task steps, and task invocation path
+* `graph_desc.json` Detailed task graph 
+* `tool_desc.json` Only present the nodes' information within the task graph
+* `user_requests.json` Original user requests
+* `split_ids.json` Give the formal split of test samples
+
+
+As dataset from RestBench only contains orignal request and ground-truth API sequences, we have reformatted this dataset to align with experiments, including assigning a unique name to each API, constructing a task graph, and finally reformatting original data samples. Processing details are covered in `raw_process_restgpt.py`.
+
+
 
 
 ## Training-free Methods 
