@@ -15,6 +15,7 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
    - [Table of Contents](#table-of-contents)
    - [Environment Setup](#environment-setup)
        - [Deploy Open-sourced LLMs](#deploy-open-sourced-llms)
+   - [Overview](#overview)
    - [Datasets](#datasets)
    - [Training-free Methods](#training-free-methods)
        - [Code Intro](#code-intro)
@@ -58,6 +59,34 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
   python3 -m fastchat.serve.openai_api_server --host 127.0.0.1 --port 8008
   ```
 
+## Overview 
+```
+.
+├── README.assets    
+├── README.md       
+├── data                           --> Provide 4 datasets, dataset splits code and processing code for RestBench
+│   ├── dailylife
+│   ├── huggingface
+│   ├── multimedia
+│   ├── raw                        --> Original files from RestBench
+│   │   └── RestBench
+│   ├── raw_process_restgpt.py     --> Codes for processing RestBench
+│   ├── split_data.py              --> Codes for splitting test-set
+│   └── tmdb
+├── evaluate.py                    --> Codes for evaluation 
+├── finetunellm                    --> Codes for fine-tuning LLMs and then make direct inference based on fine-tuned LLMs
+├── finetunellm_script.sh          --> Scripts for fine-tuning LLMs
+├── prediction                     --> Results of Task Planning
+├── requirements.txt     
+├── trainfree                      --> Codes for training-free methods (Direct, GraphSearch, and SGC)
+├── trainfree_script.sh            --> Scripts for training-free methods
+├── traingnn                       --> Codes for training GNNs
+├── traingnn_reproduce.sh          --> Scripts for reproducing reported GNN / LM+GNN results
+└── utils                 
+```
+
+This repo provides both training-free and training-based methods. Besides, we provide source codes for fine-tuning LLMs using LoRA on splitted training data. Explanations of these contents will be detailed as follows.
+
 
 ## Datasets
 
@@ -81,7 +110,7 @@ As dataset from RestBench only contains orignal request and ground-truth API seq
 ### Code Intro
 Codes of training-free modes are under the **`trainfree`** folder:
 * **Direct** LLM's direct inference (default setting - 1-shot in-context learning). Implementation refers to [TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md).
-* **GraphSearch** LLM performs iterative search on Task Graph to select an optimal invocation path, including GreedySearch, AdaptiveSearch, and BeamSearch three variants. Implementation refers to [ControlLLM](https://github.com/OpenGVLab/ControlLLM/blob/main/cllm/services/tog/tool.py).
+* **GraphSearch** LLM performs iterative search on the task graph to select an optimal invocation path, including GreedySearch, AdaptiveSearch, and BeamSearch three variants. Implementation refers to [ControlLLM](https://github.com/OpenGVLab/ControlLLM/blob/main/cllm/services/tog/tool.py).
 * **SGC** Our training-free SGC method.
 
 Besides, we also provide two improved prompt templates, **2-shot** and **PlaG**, to investigate the orthogonal effectiveness of our method. 
@@ -119,7 +148,7 @@ Specifically, we explain the core arguments of `main.py`:
 * `gnn_hidden_dim`: Dimension of hidden layers within GNN
 * `num_negatives`: Number of negative samples per positive task with default setting as `2`
 * `text_negative`: Whether the negative samples are textually similar to positive task
-* `lm_frozen`: Whether the parameters of LM are frozen. `1` denotes the GNN-only mode and `0` denotes the LM+GNN co-train mode.
+* `lm_frozen`: Whether the parameters of LM are frozen. `1` denotes the GNN-only mode and `0` denotes the LM+GNN co-trained mode.
 
 ```shell
 # HuggingFace - GNN only
@@ -153,7 +182,7 @@ Running scripts can be found in `finetunellm_script.sh` and we use 2 NVIDIA A100
 
 `evaluate.py` provides a evaluation of task planning result, and metrics including `Node-F1`, `Link-F1`, `Node-Hallucination` (both Macro and Micro), and `Link-Hallucination` (both Macro and Micro).
 
-To facilitate reproducibility, we have provided the direct inference results of CodeLLaMA-13B and Mistral-7B under the `prediction` folder.
+To facilitate reproducibility, we have provided the direct inference results of CodeLLaMA-13B and Mistral-7B on HuggingFace dataset under the `prediction` folder.
 
 For evaluation, you have to specify the LLM's name, dataset, and the method (for example, `direct` denotes LLM's direct inference):
 ```shell 
