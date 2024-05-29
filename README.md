@@ -11,6 +11,7 @@ This is the official implementation for paper "Can Graph Learning Improve Task P
    - [Training-free Methods](#training-free-methods)
        - [Repo Intro](#repo-intro)
        - [Reproducibility](#reproducibility)
+   - [Fine-tuning LLMs](#fine-tuning-llms)
    - [TODO](#todo)
 
 
@@ -51,7 +52,7 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
 ## Training-free Methods 
 
 ### Repo Intro
-Codes of training-free modes are under the `**trainfree**` folder:
+Codes of training-free modes are under the **`trainfree`** folder:
 * **Direct** LLM's direct inference (default setting - 1-shot in-context learning). Implementation refers to [TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md).
 * **GraphSearch** LLM performs iterative search on Task Graph to select an optimal invocation path, including GreedySearch, AdaptiveSearch, and BeamSearch three variants. Implementation refers to [ControlLLM](https://github.com/OpenGVLab/ControlLLM/blob/main/cllm/services/tog/tool.py).
 * **SGC** Our training-free SGC method.
@@ -71,6 +72,28 @@ Besides, we also provide two improved prompt templates, **2-shot** and **PlaG**,
 Running scripts can be found in `trainfree_script.sh`. 
 
 **Hint** You have to first run the Direct Inference to obtain any LLM's direct inference results to faciliate SGC or GraphSearch.
+
+
+
+## Fine-tuning LLMs
+
+### Repo Intro 
+
+Codes of fine-tuning LLMs are under the **`finetunellm`** folder:
+* **LLM Fine-tune**  Using LoRA to fine-tune a LLM with training data coming from the ground-truth `<user_request, decomposed task steps, task invocation path>` triplets. During experiments, we fine-tune LLMs of different parameter scales, including **[CodeLLaMA-7B](https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf)** and **[Vicuna-13B](https://huggingface.co/lmsys/vicuna-13b-v1.5)**.
+* **Inference based on Fine-tuned LLMs** Making direct inference based on fine-tuned LLMs. You have to specify the LLM's name and the ckpt_dir. 
+
+```
+├── finetunellm
+│   ├── inference.py         --> Direct inference of fine-tuned LLMs
+│   ├── main.py              --> Fine-tuning LLM
+│   └── user_prompt.py       --> Instruction Template
+```
+
+### Reproducibility
+
+Running scripts can be found in `finetunellm_script.sh`. We use 2 NVIDIA A100-80G GPUs for fine-tuning LLMs.
+
 
 
 
