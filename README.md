@@ -16,8 +16,9 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
    - [Environment Setup](#environment-setup)
        - [Deploy Open-sourced LLMs](#deploy-open-sourced-llms)
    - [Training-free Methods](#training-free-methods)
-       - [Repo Intro](#repo-intro)
+       - [Code Intro](#code-intro)
        - [Reproducibility](#reproducibility)
+   - [Training GNNs](#training-gnns)
    - [Fine-tuning LLMs](#fine-tuning-llms)
    - [TODO](#todo)
 
@@ -58,7 +59,7 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
 
 ## Training-free Methods 
 
-### Repo Intro
+### Code Intro
 Codes of training-free modes are under the **`trainfree`** folder:
 * **Direct** LLM's direct inference (default setting - 1-shot in-context learning). Implementation refers to [TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md).
 * **GraphSearch** LLM performs iterative search on Task Graph to select an optimal invocation path, including GreedySearch, AdaptiveSearch, and BeamSearch three variants. Implementation refers to [ControlLLM](https://github.com/OpenGVLab/ControlLLM/blob/main/cllm/services/tog/tool.py).
@@ -79,6 +80,37 @@ Besides, we also provide two improved prompt templates, **2-shot** and **PlaG**,
 Running scripts can be found in `trainfree_script.sh`. 
 
 **Hint** You have to first run the Direct Inference to obtain any LLM's direct inference results to facilitate SGC or GraphSearch.
+
+
+## Training GNNs
+
+Codes of training-based GNNs are under the **`traingnn`** folder:
+```
+├── traingnn
+│   ├── gnn.py              --> GNN encoder implementation, including SGC, GCN, GAT, SAGE, GIN, and TransformerConv
+│   ├── main.py             --> Training GNN and then testing the performance
+│   ├── model.py            --> LM+GNN model
+│   └── sampler.py          --> Sampling object to prepare training triplets `<step, positive task, negative task>`
+├── traingnn_reproduce.sh   --> Scripts for reproducing all experimental results
+```
+
+Specifically, we explain the core arguments of `main.py`:
+* `lm_name`: Name of LM encoder with default choice as `intfloat/e5-large`
+* `gnn_name`: Name of GNN encoder with choices `[SGC, GCN, GAT, SAGE, GIN, TransformerConv]`
+* `gnn_hidden_dim`: Dimension of hidden layers within GNN
+* `num_negatives`: Number of negative samples per positive task with default setting as `2`
+* `text_negative`: Whether the negative samples are textually similar to positive task
+* `lm_frozen`: Whether the parameters of LM are frozen. `1` denotes the GNN-only mode and `0` denotes the LM+GNN co-train mode.
+
+```shell
+# HuggingFace - GNN only
+python main.py --lm_frozen=1 --epoch=10 --text_negative=1 --gnn_name=SAGE --lr=0.001
+
+# HuggingFace - LM+GNN co-train
+python main.py --lm_frozen=0 --epoch=20 --text_negative=1 --gnn_name=SAGE
+```
+
+More running scripts can be found in `traingnn_reproduce.sh`. 
 
 
 
