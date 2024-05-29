@@ -144,6 +144,9 @@ def evaluate(dataset, llm_name, method, metrics=["graph"], modes=["chain"], comp
 @click.option("--remove_non_pred", type=int, default=1)
 @click.option("--method", type=str, default="direct")
 def main(dataset, llm, remove_non_pred, method):
+    # TODO: you need to specify the LLM's short name, the dataset, and the method's name
+    # e.g. evaluate CodeLlama-7b's direct inference on HuggingFace
+    #  python evaluate.py --llm=CodeLlama-7b --dataset=huggingface --method=direct
     evaluate(dataset, llm, method, remove_non_pred=remove_non_pred)
 
 
