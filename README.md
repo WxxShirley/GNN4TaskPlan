@@ -1,11 +1,29 @@
 # Can Graph Learning Improve Task Planning?
 
+
+  [![Paper](https://img.shields.io/badge/Paper-arXiv%20Link-blue)](https://arxiv.org/abs/2405.19119)
+
+
 This is the official implementation for paper "Can Graph Learning Improve Task Planning?"
+
+###  
 
 
 ![task](./README.assets/task.jpg)
 
 Task planning aims to break down complex user request into solvable sub-tasks, thereby fulfilling the original request. In this context, the sub-tasks can be naturally viewed as a graph where nodes represent the sub-tasks, and the edges denote the dependencies among them. Consequently, task planning is a decision-making problem that involves selecting a connected path within the corresponding graph and invoking it. In this paper, we first provide theoretical analysis, showing that **the biases of attention and auto-regressive loss impede LLM's ability to effectively solve decision-making on graphs**. Based on the theoretical analysis, we **introduce an additional GNN for sub-task retrieval, available in both training-free and training-based variants**. The experiments on diverse LLMs and planning benchmarks demonstrate that the proposed method outperforms existing solutions with much less computation time. Furthermore, the performance is further enhanced by improved prompts or a fine-tuned model.
+
+
+
+> Feel free to cite this work if you find it useful to you! 😄
+```
+@article{wu2024graph,
+  title={Can Graph Learning Improve Task Planning?},
+  author={Xixi Wu and Yifei Shen and Caihua Shan and Kaitao Song and Siwei Wang and Bohang Zhang and Jiarui Feng and Hong Cheng and Wei Chen and Yun Xiong and Dongsheng Li},
+  journal={arXiv preprint arXiv:2405.19119},
+  year={2024}
+}
+```
 
 ---
 
