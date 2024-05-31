@@ -28,7 +28,7 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
 
 ### 🔥 Updates
 
-- *May 30 2024* 📚 We posted the first version of our paper!
+- *May 30 2024* 📚 We posted the first version of our paper! Intuitions motivating this paper can be found in this [Zhihu Blog](https://zhuanlan.zhihu.com/p/700331629) 🤩
 - *May 29 2024* 🚀 We released the datasets and codes of GNN4TaskPlan!
 
 
