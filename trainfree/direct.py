@@ -219,7 +219,7 @@ def main(dataset, temperature, top_p, api_addr, api_port, llm, use_demos, multiw
     # Set up multi-worker
     sem = asyncio.Semaphore(multiworker)
     
-    resp_type = dataset != "dailylife"
+    resp_type = dataset in ["huggingface", "multimedia"]
     async def inference_wrapper(input, url, temperature, top_p, tool_string, write_file, llm, demo_string, resource_type):
         async with sem:
             await inference_one_case(input, url, temperature, top_p, tool_string, write_file, llm, demo_string, resource_type)
