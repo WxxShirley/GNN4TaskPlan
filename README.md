@@ -84,6 +84,16 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
   python3 -m fastchat.serve.openai_api_server --host 127.0.0.1 --port 8008
   ```
 
+  If you use devices from platforms like AutoDL, using the following scripst to depoly the LLM services
+  ```shell
+  python3 -m fastchat.serve.controller --host 0.0.0.0 
+  # `--model-path` example local path of the LLM
+  # `--num-gpus` number of available GPUs
+  python3 -m fastchat.serve.vllm_worker --model-path /root/autodl-tmp/models/AI-ModelScope/Mistral-7B-Instruct-v0.2 --host 127.0.0.1  --num-gpus 2 
+  python3 -m fastchat.serve.openai_api_server --host 127.0.0.1  --port 8008 
+  ```
+
+
 ## Overview 
 ```
 .
