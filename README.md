@@ -84,7 +84,10 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
   python3 -m fastchat.serve.openai_api_server --host 127.0.0.1 --port 8008
   ```
 
-  If you use devices from platforms like AutoDL, using the following scripst to depoly the LLM services
+  If you use devices from platforms like **AutoDL**, you can refer to the following running scripts and trouble-shooting:
+  <details show=hide>
+  Commands to depoly the LLM services
+    
   ```shell
   python3 -m fastchat.serve.controller --host 0.0.0.0 
   # `--model-path` example local path of the LLM
@@ -92,6 +95,16 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
   python3 -m fastchat.serve.vllm_worker --model-path /root/autodl-tmp/models/AI-ModelScope/Mistral-7B-Instruct-v0.2 --host 127.0.0.1  --num-gpus 2 
   python3 -m fastchat.serve.openai_api_server --host 127.0.0.1  --port 8008 
   ```
+  
+    If you encounter the following error, just **comment Lines 227-228** in `site-packages/vllm/engine/async_llm_engine.py`
+    ```log
+    2024-07-22 17:30:50 | ERROR | stderr |   File "/root/miniconda3/lib/python3.8/site-packages/vllm/engine/async_llm_engine.py", line 228, in _run_workers_async
+    2024-07-22 17:30:50 | ERROR | stderr |     assert output == other_output
+    2024-07-22 17:30:50 | ERROR | stderr | AssertionError
+   ```
+
+   If running the command of `vllm_worker` leads to failture, you can either switch to the `model_worker` or comment some assertion codes.
+  </details>
 
 
 ## Overview 
