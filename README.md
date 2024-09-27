@@ -4,7 +4,7 @@
   [![Paper](https://img.shields.io/badge/Paper-arXiv%20Link-blue)](https://arxiv.org/abs/2405.19119)
 
 
-This is the official implementation for paper "Can Graph Learning Improve Task Planning?"
+This is the official implementation for our NeurIPS 2024 paaper "Can Graph Learning Improve Task Planning?"
 
 ###  
 
@@ -26,8 +26,9 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
 ```
 
 
-### 🔥 Updates
+### 🔥 News
 
+- *Sep 26 2024* 😄 Our paper is accepted by **NeurIPS 2024**. New version of paper, implementation of other baselines, and blogs will be released soon!
 - *May 30 2024* 📚 We posted the first version of our paper! 
 - *May 29 2024* 🚀 We released the datasets and codes of GNN4TaskPlan!
 
