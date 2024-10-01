@@ -267,7 +267,7 @@ Running scripts are available in `GraphToken/run.sh`. Feel free to adjust traini
 
 - [x] [Code] Release all related codes of open-sourced LLMs
 - [ ] [Code] Release training-free codes of GPT-series
-- [ ] [Docs] Provide a Chinese version README
+- [x] [Docs] Provide a Chinese version README
 - [x] [Result] Provide direct inference results of several LLMs
 - [ ] [Resource] Provide ckpt of both GNN and LM+GNN for reproducibility
 - [x] [Resource] Provide processing codes for RestBench and UltraTool
