@@ -4,7 +4,7 @@
   [![Paper](https://img.shields.io/badge/Paper-arXiv%20Link-blue)](https://arxiv.org/abs/2405.19119)    
 
 
-This is the official implementation for our NeurIPS 2024 paper "Can Graph Learning Improve Planning in LLM-based Agents?"  [[中文]](../README.assets/README_zh.md)
+This is the official implementation for our NeurIPS 2024 paper "Can Graph Learning Improve Planning in LLM-based Agents?"  [[中文]](https://github.com/WxxShirley/GNN4TaskPlan/blob/main/README.assets/README_zh.md)
 
 ###  
 
