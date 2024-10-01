@@ -34,10 +34,11 @@ def bi_evaluate(id_list, pred_dict, tmp_print=False):
 
         node_f1, link_f1 = f1_score(pred_node, gt_node), f1_score(pred_link, gt_link)
         search_node_f1, search_link_f1 = f1_score(search_node, gt_node), f1_score(search_link, gt_link)
-        
-        init_scores.append([node_f1, link_f1])
+        init_succ, search_succ = float(node_f1 >= 0.99), float(search_node_f1 >= 0.99)
 
-        searched_scores.append([search_node_f1, search_link_f1])
+        init_scores.append([node_f1, link_f1, init_succ])
+
+        searched_scores.append([search_node_f1, search_link_f1, search_succ])
         cost_times.append(content["cost_time"])
 
     avg_pred_score = np.round(np.mean(np.array(init_scores), axis=0), 4)
@@ -49,8 +50,10 @@ def bi_evaluate(id_list, pred_dict, tmp_print=False):
     return {
         "base-node-f1": avg_pred_score[0],
         "base-link-f1": avg_pred_score[1],
+        "base-acc": avg_pred_score[2],
         "search-node-f1": avg_searched_score[0],
         "search-link-f1": avg_searched_score[1],
+        "search-acc": avg_searched_score[2],
         "cost_time": np.round(np.mean(np.array(cost_times)), 4)
     }
 
@@ -133,7 +136,7 @@ if __name__ == "__main__":
 
     if args.use_graph:
         tb = pt.PrettyTable()
-        tb.field_names = ["Dataset", "LLM", "LM", "Alpha", "Node-F1", "Link-F1"]
+        tb.field_names = ["Dataset", "LLM", "LM", "Alpha", "Node-F1", "Link-F1", "Accuracy"]
         lm_name = args.lm_name.split('/')[-1]
 
         for idx in range(len(tool_emb_list)):
@@ -159,9 +162,9 @@ if __name__ == "__main__":
 
             score_dict = bi_evaluate(new_alignment_ids, final_pred_dict)
             if idx == 0:
-                tb.add_row([args.dataset, args.llm_name, lm_name, 'Direct', score_dict['base-node-f1'], score_dict['base-link-f1']])
+                tb.add_row([args.dataset, args.llm_name, lm_name, 'Direct', score_dict['base-node-f1'], score_dict['base-link-f1'], score_dict['base-acc']])
             alpha_name = args.alpha_list[idx] if idx != len(args.alpha_list) - 1 else "No Graph"
-            tb.add_row([args.dataset, args.llm_name, lm_name, alpha_name, score_dict['search-node-f1'], score_dict['search-link-f1']])
+            tb.add_row([args.dataset, args.llm_name, lm_name, alpha_name, score_dict['search-node-f1'], score_dict['search-link-f1'], score_dict['search-acc']])
         
         print(tb)
     else:

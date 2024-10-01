@@ -22,6 +22,11 @@ def batch_f1_score(pred_list, gt_list):
     return round(np.mean(np.array(f1_score_list)), 4)
 
 
+def batch_task_accuracy(pred_list, gt_list):
+    scores = [float(f1_score(pred, gt) >= 0.99) for pred, gt in zip(pred_list, gt_list)]
+    return round(sum(scores) / len(scores), 4)
+
+
 def node_hallucination_rate(solution, valid_tools, data_id=None):
     if len(solution) == 0:
         return [0.0, 0.0]
@@ -83,9 +88,9 @@ def evaluate(dataset, llm_name, method, metrics=["graph"], modes=["chain"], comp
 
     table = pt.PrettyTable()
     if "step" in metrics:
-        table.field_names = ['Dataset', 'LLM', 'Mode', 'Step-R1', 'Step-R2', 'NF', 'LF', 'NH-1', 'NH-2', 'LH-1', 'LH-2']
+        table.field_names = ['Dataset', 'LLM', 'Mode', 'Step-R1', 'Step-R2', 'NF', 'LF', "Acc", 'NH-1', 'NH-2', 'LH-1', 'LH-2']
     else:
-        table.field_names = ['Dataset', 'LLM', 'Mode', 'NF', 'LF', 'NH-1', 'NH-2', 'LH-1', 'LH-2']
+        table.field_names = ['Dataset', 'LLM', 'Mode', 'NF', 'LF', "Acc", 'NH-1', 'NH-2', 'LH-1', 'LH-2']
 
     gt_tool_nodes = json.load(open(f"data/{dataset}/tool_desc.json", 'r'))["nodes"]
     gt_tool_links = json.load(open(f"data/{dataset}/graph_desc.json", 'r'))["links"]
@@ -127,13 +132,15 @@ def evaluate(dataset, llm_name, method, metrics=["graph"], modes=["chain"], comp
             node_f1 = batch_f1_score([pred_g["nodes"] for pred_g in pred_graphs], [gt_g["nodes"] for gt_g in gt_graphs])
             link_f1 = batch_f1_score([pred_g["links"] for pred_g in pred_graphs], [gt_g["links"] for gt_g in gt_graphs]) if mode != "single" else 'N/A'
 
+            accuracy = batch_task_accuracy([pred_g["nodes"] for pred_g in pred_graphs], [gt_g["nodes"] for gt_g in gt_graphs])
+
             node_hr = batch_node_hallucination([pred_g["nodes"] for pred_g in pred_graphs], gt_tool_nodes, alignment_ids)
             link_hr = batch_node_hallucination([pred_g["links"] for pred_g in pred_graphs], gt_tool_links)
             
             if 'step' not in metrics:
-                table.add_row([dataset, llm_name, mode, node_f1, link_f1, node_hr[0], node_hr[1], link_hr[0], link_hr[1]])
+                table.add_row([dataset, llm_name, mode, node_f1, link_f1, accuracy, node_hr[0], node_hr[1], link_hr[0], link_hr[1]])
             else:
-                table.add_row([dataset, llm_name, mode, metrics_dict['step_rouge1'], metrics_dict['step_rouge2'], node_f1, link_f1, node_hr[0], node_hr[1], link_hr[0], link_hr[1]])
+                table.add_row([dataset, llm_name, mode, metrics_dict['step_rouge1'], metrics_dict['step_rouge2'], node_f1, link_f1, accuracy, node_hr[0], node_hr[1], link_hr[0], link_hr[1]])
     
     print(table)
 
