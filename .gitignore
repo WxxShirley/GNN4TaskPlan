@@ -12,3 +12,7 @@ __pycache__
 /__pycache__
 /.vscode
 .vscode
+
+/wandb
+/wandb/
+wandb

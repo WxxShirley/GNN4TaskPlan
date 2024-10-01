@@ -1,17 +1,17 @@
-# Can Graph Learning Improve Task Planning?
+# Can Graph Learning Improve Planning in LLM-based Agents?
 
 
   [![Paper](https://img.shields.io/badge/Paper-arXiv%20Link-blue)](https://arxiv.org/abs/2405.19119)
 
 
-This is the official implementation for our NeurIPS 2024 paaper "Can Graph Learning Improve Task Planning?"
+This is the official implementation for our NeurIPS 2024 paper "Can Graph Learning Improve Planning in LLM-based Agents?"
 
 ###  
 
 
 ![task](./README.assets/task.jpg)
 
-Task planning aims to break down complex user request into solvable sub-tasks, thereby fulfilling the original request. In this context, the sub-tasks can be naturally viewed as a graph where nodes represent the sub-tasks, and the edges denote the dependencies among them. Consequently, task planning is a decision-making problem that involves selecting a connected path within the corresponding graph and invoking it. In this paper, we first provide theoretical analysis, showing that **the biases of attention and auto-regressive loss impede LLM's ability to effectively solve decision-making on graphs**. Based on the theoretical analysis, we **introduce an additional GNN for sub-task retrieval, available in both training-free and training-based variants**. The experiments on diverse LLMs and planning benchmarks demonstrate that the proposed method outperforms existing solutions with much less computation time. Furthermore, the performance is further enhanced by improved prompts or a fine-tuned model.
+Task planning aims to break down complex user request into solvable sub-tasks, thereby fulfilling the original request. In this context, the sub-tasks can be naturally viewed as a graph where nodes represent the sub-tasks, and the edges denote the dependencies among them. Consequently, task planning is a decision-making problem that involves **selecting a connected path within the corresponding graph** and invoking it. In this paper, we first provide theoretical analysis, showing that *the biases of attention* and *auto-regressive loss* impede LLM's ability to effectively solve decision-making on graphs. Based on the theoretical analysis, we **introduce an additional GNN for sub-task retrieval, available in both training-free and training-based variants**. The experiments on diverse LLMs and planning benchmarks demonstrate that the proposed method outperforms existing solutions with much less computation time. Furthermore, the performance is further enhanced by improved prompts or a fine-tuned model.
 
 
 
