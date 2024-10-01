@@ -7,9 +7,9 @@
 ###  
 
 
-![task](./README.assets/task.jpg)
+![task](task.jpg)
 
-不同于已有的提示工程和大模型微调方法，我们研究了正交于这两种主流方法的新方向：利用图学习技术提升大模型智能体的规划能力。
+不同于已有的提示工程和大模型微调方法，我们研究了正交于这两种主流方法的新方向：**利用图学习技术提升大模型智能体的规划能力**。
 在任务规划中，不同的子任务之间存在着依赖关系，这些关系可以用任务图（Task Graph）来表示。每个节点代表一个子任务，边则表示子任务之间的依赖。
 在任务图构建完成，任务规划可以很自然地转化为: 在Task Graph中选择一条连通的路径或者子图，来满足用户的请求。
 基于此，我们的研究主要做出了三点贡献：
@@ -18,7 +18,6 @@
 * 算法与实验: 我们引入了GNN来增强LLMs的任务规划能力，它具有Training-free和Training-required两种变体。结果表明，我们的方法不仅性能优于现有的解决方案，而且计算效率更高。
 
 > 引用格式参考 
-
 ```
 @article{wu2024graph,
   title={Can Graph Learning Improve Task Planning?},
@@ -39,7 +38,7 @@ pip install -r requirements.txt
 
 ### 部署开源的大模型
 
-对于Training-free的方法，即LLM直接推理(Direct Inference)和LLM进行图搜索(GraphSearch)，我们的代码实现是利用`FastChat`库(https://github.com/lm-sys/FastChat)把LLM部署成本地可调用的API服务实现的，具体来说部署在了本地的`8008`端口。
+对于Training-free的方法，即LLM直接推理(Direct Inference)和LLM进行图搜索(GraphSearch)，我们的代码实现是利用`FastChat`(https://github.com/lm-sys/FastChat) 把LLM部署成本地可调用的API服务实现的，具体来说部署在了本地的`8008`端口。
 
 * 安装FastChat  
   ```shell
@@ -65,7 +64,7 @@ pip install -r requirements.txt
   故障排查
   <details show=hide>
   
-  1. 如果启动的API后仍无法收到请求LLM的响应，可以在Controller的指令中切换host，如下
+  1. 如果启动服务后仍无法收到请求LLM的响应，可以在Controller的指令中切换host，如下所示
      ```shell
      python3 -m fastchat.serve.controller --host 0.0.0.0 
      ```
@@ -123,7 +122,7 @@ pip install -r requirements.txt
 ## 数据集
 
 所有数据集的内容和处理过程都在`data`文件夹下。
-我们一共使用了五个数据集，其中HuggingFace，Multimedia，DailyLife来自于[TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md)，TMDB来自于[RestBench](https://github.com/Yifan-Song793/RestGPT)，另外补充了UltraTool(https://github.com/JoeYing1019/UltraTool)。
+我们一共使用了五个数据集，其中HuggingFace，Multimedia，DailyLife来自于[TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md)，TMDB来自于[RestBench](https://github.com/Yifan-Song793/RestGPT)，另外补充了[UltraTool](https://github.com/JoeYing1019/UltraTool)。
 
 每个数据集都由以下文件构成：
 * `data.json` 数据集的具体信息，每一条样本由用户请求、对应分解的步骤、和任务调用链构成
@@ -137,7 +136,7 @@ TaskBench我们使用了该Benchmark处理好的数据集。
 
 RestBench的处理过程在`data/raw_process_restgpt.py`中，原始的数据在`data/raw/RestBench`中。由于RestBench中每个任务(一个API)只有API对应的请求地址，我们首先赋予了每个API一个独特的名称和具体的功能描述。这之后，基于任务之间的参数依赖和类型构建了任务图。最后，对原始的数据进行重构成上述的标准格式，并提示GPT-4来生成每个请求对应的分解步骤，恰好和调用的任务对齐。
 
-为了演示在大的任务图上的拓展性，我们引入了新的数据集UltraTool，处理过程在`data/raw_process_ultratool.py`中，原始的数据在`data/raw/ultratool`中。由于原始的UltraTool数据集规模较大、且很多Task只出现在1-2个样本中，我们首先对数据集进行了过滤：是考虑调用的任务数>=2的样本、且只考虑出现的频率>=5的任务。我们基于过滤后的样本和任务构建了任务图，并用相似的方法提示GPT生成步骤描述，完成了数据集的重构。
+为了演示在大的任务图上的拓展性，我们引入了新的数据集UltraTool，处理过程在`data/raw_process_ultratool.py`中，原始的数据在`data/raw/ultratool`中。由于原始的UltraTool数据集规模较大、且很多Task只出现在1-2个样本中，我们首先对数据集进行了过滤：只考虑调用的任务数>=2的样本、且只考虑出现的频率>=5的任务。我们基于过滤后的样本和任务构建了任务图，并用相似的方法提示GPT生成步骤描述，完成了数据集的重构。
 
 
 ## Training-free的代码
@@ -151,17 +150,17 @@ RestBench的处理过程在`data/raw_process_restgpt.py`中，原始的数据在
 
 Training-free的方法有：
 
-* LLM直接推理(**Direct Inference**)，我们默认使用了1-shot上下文学习的设置，使用的提示参考了[TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/inference.py)
-  > 在`direct_diffprompt.py`中，我们提供了额外的提示模版，相比于默认的1-shot能实现更好的结果。其中Plan like a Graph(PlaG)是受到该原始论文["Graph-enhanced Large Language Models in Asynchronous Plan Reasoning"](https://arxiv.org/abs/2402.02805)的启发。
+* LLM直接推理 **Direct Inference**  我们默认使用了1-shot上下文学习的设置，使用的提示参考了[TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/inference.py)
+  > 在`direct_diffprompt.py`中，我们提供了额外的提示模版，相比于默认的1-shot能实现更好的结果。其中Plan like a Graph(PlaG)是受到该论文["Graph-enhanced Large Language Models in Asynchronous Plan Reasoning"](https://arxiv.org/abs/2402.02805)的启发。
 
-* LLM进行图搜索(**GraphSearch**)，LLM在任务图上进行启发式搜索，在多条遍历到的路径中选择一条最合适的作为规划结果。根据搜索策略的不同，有BeamSearch, GreedySearch, 和AdaptiveSearch这三个变体。我们的实现参考了[ControlLLM](https://github.com/OpenGVLab/ControlLLM/blob/main/cllm/services/tog/tool.py).
-* **SGC**, 我们提出的无需训练的GNN方法，使用了一个没有参数的GNN模型，即SGC，进行任务的检索来完成规划
+* LLM进行图搜索 **GraphSearch**  LLM在任务图上进行启发式搜索，在多条遍历到的路径中选择一条最合适的作为规划结果。根据搜索策略的不同，有BeamSearch, GreedySearch, 和AdaptiveSearch这三个变体。我们的实现参考了[ControlLLM](https://github.com/OpenGVLab/ControlLLM/blob/main/cllm/services/tog/tool.py).
+* **SGC**  我们提出的无需训练的GNN方法，使用了一个没有参数的GNN模型，即SGC，进行任务的检索来完成规划
 
 
 
 所有运行的指令和参数设置在脚本`trainfree_script.sh`中。
 
-注意：在运行GraphSearch/SGC之前，需要先有该LLM下的直接推理文件获得的步骤信息。
+⚠️ **注意**：在运行GraphSearch/SGC之前，需要先有该LLM下的直接推理文件获得的步骤信息。
 
 
 
@@ -177,10 +176,10 @@ Training-free的方法有：
 
 运行`main.py`文件可以完成(LM+)GNN的训练和测试，特别地，我们解释以下的参数使用:
 * `lm_name`: LM编码器的名称，默认为`intfloat/e5-large`
-* `gnn_name`: GNN编码器的名称，从`[SGC, GCN, GAT, SAGE, GIN, TransformerConv]`中选择
+* `gnn_name`: GNN编码器的名称
 * `gnn_hidden_dim`: GNN的隐藏层维度
 * `num_negatives`: 每个正样本所采集的负样本数量，默认为`2`
-* `text_negative`: 负样本是否和正样本编码空间接近
+* `text_negative`: 负样本是否和正样本编码表征接近
 * `lm_frozen`: LM的参数是否冻结，如果是`1`，则LM冻结、只训练GNN；否则`0`，意味着LM与GNN共同训练
 
 运行的指令示例，更多地在`traingnn_reproduce.sh`中。
@@ -206,7 +205,7 @@ python main.py --lm_frozen=0 --epoch=20 --text_negative=1 --gnn_name=SAGE
 
 `main.py`文件中提供了LLM微调的代码，`inference.py`是模型微调完成后进行推理的代码(运行时需要指定LLM的名称和checkpoint的路径)。
 
-所有的运行指令在`finetunellm_script.sh`中，在实验中我们使用了2张A100进行微调，并在该设备条件下进行的训练参数配置。读者可以根据设备条件修改训练的参数，如`batch_size`等。
+所有的运行指令在`finetunellm_script.sh`中，在实验中我们使用了2张A100进行微调，并在该设备条件下进行的训练参数配置。读者可以根据设备条件修改训练的参数。
 
 
 
@@ -214,10 +213,9 @@ python main.py --lm_frozen=0 --epoch=20 --text_negative=1 --gnn_name=SAGE
 
 `evaluate.py`提供了对规划结果的统一验证过程，评估的指标包括: `Node-F1`, `Link-F1`, `Node-Hallucination`, `Link-Hallucination`.
 
-为了方便读者复现，我们已经在`prediction`文件夹下提供了两个LLM在HuggingFace数据集上直接推理的结果，可以通过运行如下指令，查看不同LLM直接推理结果的得分：
+为了方便读者复现，我们已经在`prediction`文件夹下提供了两个LLMs在HuggingFace数据集上直接推理的结果，可以通过运行如下指令，查看不同LLM直接推理结果的得分，其中`llm`为要评估的LLM的名称 `method`为对应的方法名称：
 
 ```shell 
-# `llm`为要评估的LLM的名称 `method`为对应的方法名称
 python evaluate.py --llm=CodeLlama-13b --dataset=huggingface --method=direct
 ```
 
