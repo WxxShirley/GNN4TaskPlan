@@ -11,8 +11,7 @@ This is the official implementation for our NeurIPS 2024 paper "Can Graph Learni
 
 ![task](./README.assets/task.jpg)
 
-Task planning aims to break down complex user request into solvable sub-tasks, thereby fulfilling the original request. In this context, the sub-tasks can be naturally viewed as a graph where nodes represent the sub-tasks, and the edges denote the dependencies among them. Consequently, task planning is a decision-making problem that involves **selecting a connected path within the corresponding graph** and invoking it. In this paper, we first provide theoretical analysis, showing that *the biases of attention* and *auto-regressive loss* impede LLM's ability to effectively solve decision-making on graphs. Based on the theoretical analysis, we **introduce an additional GNN for sub-task retrieval, available in both training-free and training-based variants**. The experiments on diverse LLMs and planning benchmarks demonstrate that the proposed method outperforms existing solutions with much less computation time. Furthermore, the performance is further enhanced by improved prompts or a fine-tuned model.
-
+Task planning aims to break down complex user request into solvable sub-tasks, thereby fulfilling the original request. In this context, the sub-tasks can be naturally viewed as a graph where nodes represent the sub-tasks, and the edges denote the dependencies among them. Consequently, task planning is a decision-making problem that involves **selecting a connected path within the corresponding graph** and invoking it. In this paper, we first provide theoretical analysis, showing that *the biases of attention* and *auto-regressive loss* impede LLM's ability to effectively solve decision-making on graphs. Based on the theoretical analysis, we **introduce an additional GNN for sub-task retrieval, available in both training-free and training-based variants**. The experiments on diverse LLMs and planning benchmarks demonstrate that the proposed method outperforms existing solutions with much less computation time. 
 
 
 > Feel free to cite this work if you find it useful to you! 😄
@@ -111,15 +110,18 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
 ## Overview 
 ```
 .
+├── GraphToken                     --> Ours implementation of the training-required baseline: GraphToken
 ├── README.assets    
 ├── README.md       
 ├── data                           --> Provide 4 datasets, dataset splits code and processing code for RestBench
 │   ├── dailylife
 │   ├── huggingface
 │   ├── multimedia
-│   ├── raw                        --> Original files from RestBench
-│   │   └── RestBench
+│   ├── raw                        --> Original files from RestBench and UltraTool
+│   │   └── RestBench                    `https://github.com/Yifan-Song793/RestGPT`
+│   │   └── ultratool                    `https://github.com/JoeYing1019/UltraTool`
 │   ├── raw_process_restgpt.py     --> Codes for processing RestBench
+│   ├── raw_process_ultratool.py   --> Codes for processing UltraTool
 │   ├── split_data.py              --> Codes for splitting test-set
 │   └── tmdb
 ├── evaluate.py                    --> Codes for evaluation 
@@ -151,7 +153,7 @@ Each dataset contains the following files:
 
 As dataset from RestBench only contains orignal request and ground-truth API sequences, we have reformatted this dataset to align with experiments, including assigning a unique name to each API, constructing a task graph, and finally reformatting original data samples. Processing details are covered in `raw_process_restgpt.py`.
 
-
+To demonstrate scalability with large task graphs, we introduced a new dataset, [UltraTool](https://github.com/JoeYing1019/UltraTool) (ACL2024 Findings). The [original data](https://github.com/WxxShirley/GNN4TaskPlan/blob/main/data/raw/ultratool/dev.json), [processing details](https://github.com/WxxShirley/GNN4TaskPlan/blob/main/data/raw_process_ultratool.py), and [reformatted data](https://github.com/WxxShirley/GNN4TaskPlan/tree/main/data/ultratool) are well-organized in the dataset folder. This dataset includes 260 distinct tasks. The processing details involve filtering data samples with invoked tasks >= 2, retaining valid tasks with appearance counts >= 5, constructing task graphs based on the filtered tasks and trajectories, and finally prompting GPT-4 to fill in the steps.
 
 
 ## Training-free Methods 
