@@ -275,16 +275,20 @@ def generate_and_write_files():
 
 if __name__ == "__main__":
     random.seed(0)
+    # Step 1 - filtering data sampels
     # all_data contains filtered samples where # invoked tasks >= 2
     all_data = load_raw_file()
-
+    
+    # Step 2 - filtering valid tasks and only consider data samples that contain valid tasks
     # final_tasks have appeared more than 5 times
     # we further filter the data samples based on valid tasks
     final_data, final_tasks = filtering_tasks_and_sampels()
     
+    # Step 3 - construct task graph based on valid tasks, and reformat data samples like TaskBench
     construct_task_graph()
     reformat_data_samples()
     
+    # Step 4 - fill in steps
     # prompt GPT-4 to fill in more suitable steps (original steps are too coarse-grained)
     client = AzureOpenAI(
         azure_endpoint = "VALID ENDPOINT", 
