@@ -11,7 +11,7 @@ This is the official implementation for our NeurIPS 2024 paper "Can Graph Learni
 
 ![task](./README.assets/task.jpg)
 
-Task planning aims to break down complex user request into solvable sub-tasks, thereby fulfilling the original request. In this context, the sub-tasks can be naturally viewed as a graph where nodes represent the sub-tasks, and the edges denote the dependencies among them. Consequently, task planning is a decision-making problem that involves **selecting a connected path within the corresponding graph** and invoking it. In this paper, we first provide theoretical analysis, showing that *the biases of attention* and *auto-regressive loss* impede LLM's ability to effectively solve decision-making on graphs. Based on the theoretical analysis, we **introduce an additional GNN for sub-task retrieval, available in both training-free and training-based variants**. The experiments on diverse LLMs and planning benchmarks demonstrate that the proposed method outperforms existing solutions with much less computation time. 
+Task planning aims to break down complex user request into solvable sub-tasks, thereby fulfilling the original request. In this context, the sub-tasks can be naturally viewed as a graph where nodes represent the sub-tasks, and the edges denote dependencies among them. Consequently, task planning is a decision-making problem that involves **selecting a connected path within the corresponding graph** and invoking it. In this paper, we first provide theoretical analysis, showing that *the biases of attention* and *auto-regressive loss* impede LLM's ability to effectively solve decision-making on graphs. Based on the theoretical analysis, we **introduce an additional GNN for sub-task retrieval, available in both training-free and training-based variants**. The experiments on diverse LLMs and planning benchmarks demonstrate that the proposed method outperforms existing solutions with much less computation time. 
 
 
 > Feel free to cite this work if you find it useful to you! 😄
@@ -27,7 +27,7 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
 
 ### 🔥 News
 
-- *Sep 26 2024* 😄 Our paper is accepted by **NeurIPS 2024**. New version of paper, implementation of other baselines, and blogs will be released soon!
+- *Sep 26 2024* 🎉 Our paper is accepted by **NeurIPS 2024**. New version of paper, implementation of other baselines, and blogs will be released soon!
 - *May 30 2024* 📚 We posted the first version of our paper! 
 - *May 29 2024* 🚀 We released the datasets and codes of GNN4TaskPlan!
 
@@ -48,7 +48,9 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
    - [Training GNNs](#training-gnns)
    - [Fine-tuning LLMs](#fine-tuning-llms)
    - [Evaluation](#evaluation)
+   - [Implementation of Baselines](#implementation-of-baselines)
    - [TODO](#todo)
+   - [Acknowledgement](#acknowledgement)
 
 
 ## Environment Setup
@@ -90,20 +92,20 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
     
   ```shell
   python3 -m fastchat.serve.controller --host 0.0.0.0 
-  # `--model-path` example local path of the LLM
+  # `--model-path` an example local path of the LLM
   # `--num-gpus` number of available GPUs
   python3 -m fastchat.serve.vllm_worker --model-path /root/autodl-tmp/models/AI-ModelScope/Mistral-7B-Instruct-v0.2 --host 127.0.0.1  --num-gpus 2 
   python3 -m fastchat.serve.openai_api_server --host 127.0.0.1  --port 8008 
   ```
   
-    If you encounter the following error, just **comment Lines 227-228** in `site-packages/vllm/engine/async_llm_engine.py`
-    ```log
-    2024-07-22 17:30:50 | ERROR | stderr |   File "/root/miniconda3/lib/python3.8/site-packages/vllm/engine/async_llm_engine.py", line 228, in _run_workers_async
-    2024-07-22 17:30:50 | ERROR | stderr |     assert output == other_output
-    2024-07-22 17:30:50 | ERROR | stderr | AssertionError
-   ```
+  If you encounter the following error, just **comment Lines 227-228** in `site-packages/vllm/engine/async_llm_engine.py`
+  ```log
+  2024-07-22 17:30:50 | ERROR | stderr |   File "/root/miniconda3/lib/python3.8/site-packages/vllm/engine/async_llm_engine.py", line 228, in _run_workers_async
+  2024-07-22 17:30:50 | ERROR | stderr |     assert output == other_output
+  2024-07-22 17:30:50 | ERROR | stderr | AssertionError
+  ```
 
-   If running the command of `vllm_worker` leads to failture, you can either switch to the `model_worker` or comment some assertion codes.
+  If running the command of `vllm_worker` leads to failures, you can either switch to the `model_worker` or comment above assertion codes.
   </details>
 
 
@@ -113,17 +115,18 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
 ├── GraphToken                     --> Ours implementation of the training-required baseline: GraphToken
 ├── README.assets    
 ├── README.md       
-├── data                           --> Provide 4 datasets, dataset splits code and processing code for RestBench
+├── data                           --> Provide all experimental datasets [HuggingFace, Multimedia, DailyLife, TMDB, and UltraTool]
 │   ├── dailylife
 │   ├── huggingface
 │   ├── multimedia
 │   ├── raw                        --> Original files from RestBench and UltraTool
 │   │   └── RestBench                    `https://github.com/Yifan-Song793/RestGPT`
-│   │   └── ultratool                    `https://github.com/JoeYing1019/UltraTool`
+│   │   └── ultratool                    `https://github.com/JoeYing1019/UltraTool`
 │   ├── raw_process_restgpt.py     --> Codes for processing RestBench
 │   ├── raw_process_ultratool.py   --> Codes for processing UltraTool
-│   ├── split_data.py              --> Codes for splitting test-set
-│   └── tmdb
+│   ├── split_data.py              --> Codes for splitting testset
+│   ├── tmdb
+│   └── ultratool
 ├── evaluate.py                    --> Codes for evaluation 
 ├── finetunellm                    --> Codes for fine-tuning LLMs and then make direct inference based on fine-tuned LLMs
 ├── finetunellm_script.sh          --> Scripts for fine-tuning LLMs
@@ -136,19 +139,21 @@ For running LLM's direct inference or GraphSearch, our codes are implemented as 
 └── utils                 
 ```
 
-This repo provides both training-free and training-based methods. Besides, we provide source codes for fine-tuning LLMs using LoRA on splitted training data. Explanations of these contents will be detailed as follows.
+This repo provides both training-free and training-based methods. 
+
+Besides, we provide source codes for fine-tuning LLMs using LoRA on splitted training data. Explanations of these contents will be detailed as follows.
 
 
 ## Datasets
 
-Four experimental datasets (HuggingFace, Multimedia, Daily Life from [TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md), and TMDB from [RestBench](https://github.com/Yifan-Song793/RestGPT)) are under the **`data`** folder. 
+Five experimental datasets (HuggingFace, Multimedia, Daily Life from [TaskBench](https://github.com/microsoft/JARVIS/blob/main/taskbench/README.md), TMDB from [RestBench](https://github.com/Yifan-Song793/RestGPT)), and [UltraTool](https://github.com/JoeYing1019/UltraTool) are under the **`data`** folder. 
 
 Each dataset contains the following files:
 * `data.json` Detailed dataset, with each sample has a user request, ground-truth decomposed task steps, and task invocation path
 * `graph_desc.json` Detailed task graph 
 * `tool_desc.json` Only present the nodes' information within the task graph
 * `user_requests.json` Original user requests
-* `split_ids.json` Give the formal split of test samples
+* `split_ids.json` Give the formal split of testset
 
 
 As dataset from RestBench only contains orignal request and ground-truth API sequences, we have reformatted this dataset to align with experiments, including assigning a unique name to each API, constructing a task graph, and finally reformatting original data samples. Processing details are covered in `raw_process_restgpt.py`.
@@ -250,6 +255,14 @@ And the result is as follows (`NF` - Node-F1, `LF` - Link-F1, `NH-1` - Micro Nod
 ```
 
 
+## Implementation of Baselines 
+
+We provide our reproduction of the baseline method, GraphToken, in the `GraphToken` folder. Since this method does not have an official implementation, we reproduced it based on the original paper while tailoring it to the planning scenario.
+Running scripts are available in `GraphToken/run.sh`. Feel free to adjust training configurations, e.g., `batch_size`, `eval_batch_size`, according to your experimental devices. 
+
+> Perozzi, Bryan, et al. "Let Your Graph Do the Talking: Encoding Structured Data for LLMs." arXiv preprint, 2024.
+
+
 ## TODO 
 
 - [x] [Code] Release all related codes of open-sourced LLMs
@@ -257,5 +270,23 @@ And the result is as follows (`NF` - Node-F1, `LF` - Link-F1, `NH-1` - Micro Nod
 - [ ] [Docs] Provide a Chinese version README
 - [x] [Result] Provide direct inference results of several LLMs
 - [ ] [Resource] Provide ckpt of both GNN and LM+GNN for reproducibility
+- [x] [Resource] Provide processing codes for RestBench and UltraTool
+- [x] [Code] Release baseline methods' implementation
 
       
+## Acknowledgement
+
+We sincerely thank the following repositories for their valuable insights and contributions to our paper and implementation: 
+
+* [TaskBench](https://github.com/microsoft/JARVIS/tree/main/taskbench) We highly recommend this high-quality dataset and the official inference codes it provides.
+* [RestBench](https://github.com/Yifan-Song793/RestGPT) and [UltraTool](https://github.com/JoeYing1019/UltraTool) We appreciate the datasets released by these projects.
+* [G-Retrieval](https://github.com/XiaoxinHe/G-Retriever) We referenced this repository to reproduce the GraphToken baseline, as both utilize a similar architecture that employs GNN outputs as graph tokens for LLM input.
+* [TAPE](https://github.com/XiaoxinHe/TAPE)  We referenced its official implementation to reproduce this method on planning tasks.
+
+  
+--- 
+
+📮 If your still have other questions, you can open an issue or contact via e-mail: xxwu@se.cuhk.edu.hk 
+
+
+
