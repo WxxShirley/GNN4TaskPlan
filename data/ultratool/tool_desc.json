@@ -1,0 +1,2138 @@
+{
+    "nodes": [
+        {
+            "id": "order_tracking",
+            "desc": "Order Tracking Tool",
+            "domain": [
+                "Tracking"
+            ]
+        },
+        {
+            "id": "search_repair_provider",
+            "desc": "Search for repair service providers",
+            "domain": [
+                "Repair"
+            ]
+        },
+        {
+            "id": "send_sms",
+            "desc": "SMS notification sending tool",
+            "domain": [
+                "Repair",
+                "Finance",
+                "Flight",
+                "Train"
+            ]
+        },
+        {
+            "id": "special_vehicle_rental_service",
+            "desc": "Provides rental services for various types of vehicles including cars, SUVs, business vehicles, and sports cars. Users need to provide information such as rental period, type of driver's license, and whether to purchase vehicle insurance",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "search_agenda",
+            "desc": "Search Agenda Schedule Tool. Search for any other schedules ",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "menu_select_api",
+            "desc": "Ordering API for selecting dishes",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "manage_schedule",
+            "desc": "Manage and arrange schedules",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "detailed_inquiry",
+            "desc": "Business Inquiry - Detailed Inquiry Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "schedule_planner",
+            "desc": "Arrange and manage personal schedules",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "appliance_repair_cancellation",
+            "old_desc": "Appliance Repair Cancellation Tool",
+            "desc": "Cancel a appliance repair",
+            "domain": [
+                "Repair"
+            ]
+        },
+        {
+            "id": "flight_status_tracker",
+            "desc": "Flight Status Tracking Tool",
+            "domain": [
+                "Flight"
+            ]
+        },
+        {
+            "id": "read_agenda",
+            "desc": "Read agenda information",
+            "domain": [
+                "Agenda"
+            ]
+        },
+        {
+            "id": "hotel_booking_query",
+            "desc": "Hotel Booking Inquiry / Query Tool",
+            "domain": [
+                "Hotel"
+            ]
+        },
+        {
+            "id": "import_schedule",
+            "desc": "Import schedule",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "travel_plan_maker",
+            "desc": "Travel Itinerary Planning Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "del_transaction",
+            "desc": "Delete a transaction by transaction ID",
+            "domain": [
+                "Account",
+                "Finance"
+            ]
+        },
+        {
+            "id": "search_restaurants",
+            "desc": "Search for specific types of restaurants in a designated area",
+            "domain": [
+                "Restaurant",
+                "Travel",
+                "Agenda"
+            ]
+        },
+        {
+            "id": "train_ticket_query",
+            "desc": "Query for Train Ticket ",
+            "domain": [
+                "Train"
+            ]
+        },
+        {
+            "id": "foreign_currency_exchange",
+            "desc": "Foreign Currency Exchange Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "daily_schedule_manager",
+            "desc": "Schedule Management Tool",
+            "domain": [
+                "Movie",
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "product_catalog_search",
+            "desc": "Product Catalog Search Tool",
+            "domain": [
+                "Document",
+                "Other"
+            ]
+        },
+        {
+            "id": "online_appointment_booking",
+            "desc": "Online Appointment Booking Tool",
+            "domain": [
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "academic_paper_search",
+            "desc": "Academic Paper Search Tool",
+            "domain": [
+                "Document",
+                "Other"
+            ]
+        },
+        {
+            "id": "book_meeting_room",
+            "desc": "Complete meeting room reservation",
+            "domain": [
+                "Agenda",
+                "Meeting",
+                "Weather"
+            ]
+        },
+        {
+            "id": "loan_info_entry",
+            "desc": "Loan Information Entry Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "smart_home_control",
+            "desc": "A tool that can control smart home devices such as air conditioners, lights, smart plugs, etc.",
+            "domain": [
+                "Health",
+                "Agenda",
+                "Other"
+            ]
+        },
+        {
+            "id": "car_rental_cancelling",
+            "desc": "Car Rental Reservation Cancellation Tool",
+            "domain": [
+                "Travel",
+                "Rental"
+            ]
+        },
+        {
+            "id": "check_meeting_room_availability",
+            "desc": "Check the availability of the meeting room for a specified time period",
+            "domain": [
+                "Agenda",
+                "Meeting",
+                "Weather"
+            ]
+        },
+        {
+            "id": "train_ticket_booking",
+            "desc": "Booking a Train ticket ",
+            "domain": [
+                "Travel",
+                "Meeting",
+                "Train"
+            ]
+        },
+        {
+            "id": "agenda_sorting",
+            "desc": "Sort the agenda",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "travel_group_schedule",
+            "desc": "Travel Group Itinerary Query Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "luggage_check_in",
+            "desc": "Luggage Check-in Tool",
+            "domain": [
+                "Travel",
+                "Flight"
+            ]
+        },
+        {
+            "id": "create_document",
+            "desc": "Create a new document report",
+            "domain": [
+                "Document",
+                "Agenda",
+                "Finance",
+                "Tracking"
+            ]
+        },
+        {
+            "id": "change_password",
+            "desc": "Tool for changing account password",
+            "domain": [
+                "Account",
+                "Finance"
+            ]
+        },
+        {
+            "id": "souvenir_purchase",
+            "desc": "Tourist Souvenir Purchase Tool",
+            "domain": [
+                "Travel",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "get_menu",
+            "desc": "Get restaurant menu information",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "select_best_hotel",
+            "desc": "Select the best hotel based on user requirements",
+            "domain": [
+                "Travel",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "search_conference_rooms",
+            "desc": "Search for conference rooms that meet the criteria",
+            "domain": [
+                "Meeting",
+                "Weather"
+            ]
+        },
+        {
+            "id": "business_trip_ticket_search",
+            "desc": "Flight ticket inquiry for tickets that can be booked on the same day for business trips ",
+            "domain": [
+                "Travel",
+                "Flight"
+            ]
+        },
+        {
+            "id": "flight_info_query",
+            "desc": "Flight Information Query",
+            "domain": [
+                "Other",
+                "Flight",
+                "Tracking",
+                "Travel",
+                "Document"
+            ]
+        },
+        {
+            "id": "checkout_api",
+            "desc": "Checkout API, dependent on the result of the previous Place Order API 'Order ID'",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "traffic_card",
+            "desc": "Traffic Card Balance Inquiry Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "website_design_tool",
+            "desc": "Help users create and design web pages",
+            "domain": [
+                "Other",
+                "Restaurant",
+                "Travel",
+                "Meeting",
+                "Music"
+            ]
+        },
+        {
+            "id": "business_communication",
+            "desc": "Business Communication Tool",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "cruise_ticket_search",
+            "desc": "Cruise Ticket Search Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "cruise_ship_booking",
+            "desc": "Cruise Ship Ticket Inquiry Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "souvenir_recommender",
+            "desc": "Travel Souvenir Recommendation Tool",
+            "domain": [
+                "Travel",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "company_vehicle_service",
+            "desc": "Company Vehicle Service Reservation Lookup Tool",
+            "domain": [
+                "Travel",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "create_meeting",
+            "desc": "Create meeting appointment",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "restaurant_review",
+            "desc": "Restaurant Review Query Tool",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "stock_market_trend",
+            "desc": "Stock Market Trend Analysis Tool (to analyze) ",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "health_monitor_tool",
+            "desc": "Health monitoring tool, used for measuring and tracking a range of health-related data",
+            "domain": [
+                "Health",
+                "Finance"
+            ]
+        },
+        {
+            "id": "search_transactions",
+            "desc": "Retrieve transaction records within a specified time range",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "check_room_availability",
+            "desc": "Check the availability and price of room types at a specified hotel on specific dates",
+            "domain": [
+                "Agenda",
+                "Meeting",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "special_personality_test",
+            "desc": "Personality test tool that allows you to choose your favorite color, season, and music genre to generate a personality report",
+            "domain": [
+                "Other",
+                "Music"
+            ]
+        },
+        {
+            "id": "outward_reception_approval",
+            "desc": "External Reception Approval Process Tool",
+            "domain": [
+                "Travel",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "create_reminder",
+            "desc": "Create a reminder to remind for a event ",
+            "domain": [
+                "Flight",
+                "Restaurant",
+                "Tracking",
+                "Finance",
+                "Meeting",
+                "Agenda",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "verify_file_content",
+            "desc": "Verify if the content of the specified file matches the expectation",
+            "domain": [
+                "Document",
+                "Other"
+            ]
+        },
+        {
+            "id": "conference_room_cancelling",
+            "desc": "Conference Room Cancellation Tool",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "theme_park_info_search",
+            "desc": "Theme Park Information Query Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "send_document",
+            "desc": "Send the document to the specified email address",
+            "domain": [
+                "Travel",
+                "Document",
+                "Finance",
+                "Agenda"
+            ]
+        },
+        {
+            "id": "appliance_repair_status_query",
+            "desc": "Appliance Repair Inquiry Tool",
+            "domain": [
+                "Repair"
+            ]
+        },
+        {
+            "id": "visa_application",
+            "desc": "Visa Application Tool",
+            "domain": [
+                "Travel",
+                "Tracking",
+                "Other"
+            ]
+        },
+        {
+            "id": "calculate_exchange_amount",
+            "desc": "Calculate the currency exchange amount based on the exchange rate",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "food_recommendation",
+            "desc": "Recommend local delicacies based on tourist attraction location",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "virtual_try_on_tool",
+            "desc": "Virtual try-on tool that allows uploading user photos and clothing images to generate a try-on effect image",
+            "domain": [
+                "Meeting",
+                "Job"
+            ]
+        },
+        {
+            "id": "check_balance",
+            "desc": "Account Balance Check Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "geolocation_tracker",
+            "desc": "Geolocation Tracking Tool",
+            "domain": [
+                "Other",
+                "Tracking"
+            ]
+        },
+        {
+            "id": "weather_query",
+            "desc": "Get the weather forecast for a specified location and date",
+            "domain": [
+                "Alarm",
+                "Other",
+                "Flight",
+                "Tracking",
+                "Train",
+                "Health",
+                "Travel",
+                "Account",
+                "Finance",
+                "Meeting",
+                "Repair",
+                "Weather",
+                "Document",
+                "Cleaning"
+            ]
+        },
+        {
+            "id": "rename_file",
+            "desc": "Rename the file",
+            "domain": [
+                "Document"
+            ]
+        },
+        {
+            "id": "send_email",
+            "desc": "Email notification sending tool",
+            "domain": [
+                "Flight",
+                "Train",
+                "Travel",
+                "Repair",
+                "Finance",
+                "Meeting",
+                "Document",
+                "Agenda",
+                "Cleaning",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "file_modify",
+            "desc": "Used to modify the content of an existing file.",
+            "domain": [
+                "Document",
+                "Other"
+            ]
+        },
+        {
+            "id": "flight_ticket_cancelling",
+            "desc": "Cancel a Flight Ticket to cancel a flight",
+            "domain": [
+                "Flight"
+            ]
+        },
+        {
+            "id": "transfer_money",
+            "desc": "Perform transfer operation",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "home_cleaning_booking",
+            "desc": "Booking for a home clearning service ",
+            "domain": [
+                "Repair",
+                "Agenda",
+                "Cleaning"
+            ]
+        },
+        {
+            "id": "online_healing_session",
+            "desc": "Online healing sessions, including different courses such as yoga, meditation, and sound therapy",
+            "domain": [
+                "Agenda",
+                "Other"
+            ]
+        },
+        {
+            "id": "visa_status_check",
+            "desc": "Visa Status Inquiry Tool",
+            "domain": [
+                "Travel",
+                "Tracking",
+                "Other"
+            ]
+        },
+        {
+            "id": "foreign_currency_sale",
+            "desc": "Foreign Exchange Selling Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "postal_code_search",
+            "desc": "Postal Code Lookup Tool",
+            "domain": [
+                "Other"
+            ]
+        },
+        {
+            "id": "home_cleaning_query",
+            "desc": "Query (inquery/check) for a home clearning service ",
+            "domain": [
+                "Repair",
+                "Agenda",
+                "Cleaning"
+            ]
+        },
+        {
+            "id": "investment_portfolio_builder",
+            "desc": "A tool for building investment portfolios, suitable for stocks, bonds, money market securities, commodity futures, and foreign exchange investments",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "flight_status_check",
+            "desc": "A tool for checking flight status",
+            "domain": [
+                "Flight"
+            ]
+        },
+        {
+            "id": "flight_ticket_changing",
+            "desc": "Flight Ticket Booking Modification or Rescheduling Tool ",
+            "domain": [
+                "Flight"
+            ]
+        },
+        {
+            "id": "price_search",
+            "desc": "Product Price Query Tool",
+            "domain": [
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "set_reminder",
+            "desc": "Set Reminder",
+            "domain": [
+                "Alarm",
+                "Other",
+                "Flight",
+                "Tracking",
+                "Train",
+                "Health",
+                "Travel",
+                "Repair",
+                "Finance",
+                "Meeting",
+                "Weather",
+                "Document",
+                "Agenda"
+            ]
+        },
+        {
+            "id": "special_foreign_currency_purchase",
+            "desc": "A tool for purchasing foreign currency at the current exchange rate, limited to US dollars, Euros, and Australian dollars",
+            "domain": [
+                "Document",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "clock_alarm_set",
+            "desc": "Set a new alarm",
+            "domain": [
+                "Alarm",
+                "Agenda"
+            ]
+        },
+        {
+            "id": "meeting_reservation",
+            "desc": "Meeting Room Reservation Tool",
+            "domain": [
+                "Other",
+                "Finance",
+                "Meeting",
+                "Music"
+            ]
+        },
+        {
+            "id": "travel_insurance_search",
+            "desc": "Travel Insurance Query Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "sound_effects_tool",
+            "desc": "Sound effects production tool for mixing, clipping, and adjusting audio file effects",
+            "domain": [
+                "Alarm",
+                "Other",
+                "Movie",
+                "Document",
+                "Music"
+            ]
+        },
+        {
+            "id": "edit_agenda",
+            "desc": "Edit Agenda",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "clock_alarm_cancel",
+            "desc": "Cancel alarm for canceling a previous alarm ",
+            "domain": [
+                "Alarm",
+                "Agenda",
+                "Weather"
+            ]
+        },
+        {
+            "id": "flight_status_search",
+            "desc": "Flight Status Query Tool",
+            "domain": [
+                "Flight"
+            ]
+        },
+        {
+            "id": "payment_processing",
+            "desc": "Complete payment operation",
+            "domain": [
+                "Rental",
+                "Flight",
+                "Restaurant",
+                "Train",
+                "Movie",
+                "Travel",
+                "Account",
+                "Finance",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "theme_park_ticket_search",
+            "desc": "Theme Park Ticket Price Inquiry Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "special_weather_forecast_tool",
+            "desc": "Forecasts future weather conditions based on city, date, and type of forecast, capable of forecasting within the next 7 days. ",
+            "domain": [
+                "Restaurant",
+                "Travel"
+            ]
+        },
+        {
+            "id": "check_flight_seats_availability",
+            "desc": "Check the seat availability of a specified flight",
+            "domain": [
+                "Flight"
+            ]
+        },
+        {
+            "id": "part_time_job_tool",
+            "desc": "Part-time job information collection and management tool, only applicable to college students",
+            "domain": [
+                "Job"
+            ]
+        },
+        {
+            "id": "product_catalog_create",
+            "desc": "Product Catalog Creation Tool",
+            "domain": [
+                "Document",
+                "Tracking",
+                "Other"
+            ]
+        },
+        {
+            "id": "send_ticket",
+            "desc": "Send ticketing information to the user",
+            "domain": [
+                "Travel",
+                "Flight",
+                "Train"
+            ]
+        },
+        {
+            "id": "conference_room_query",
+            "desc": "Conference Room Reservation Query Tool",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "travel_camera_suggestion",
+            "desc": "Travel Photography Camera Recommendation Tool",
+            "domain": [
+                "Travel",
+                "Rental",
+                "Other"
+            ]
+        },
+        {
+            "id": "backup_agenda",
+            "desc": "Backup Schedule",
+            "domain": [
+                "Document",
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "airport_pickup",
+            "desc": "Airport transfer reservation tool",
+            "domain": [
+                "Travel",
+                "Flight"
+            ]
+        },
+        {
+            "id": "product_service_selection",
+            "desc": "Product Service Selection Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "home_cleaning_cancelling",
+            "desc": "Home Cleaning Cancellation Tool to cancel a home clearning booking",
+            "domain": [
+                "Repair",
+                "Agenda",
+                "Cleaning"
+            ]
+        },
+        {
+            "id": "car_rental_booking",
+            "desc": "Car Rental Booking Tool",
+            "domain": [
+                "Travel",
+                "Rental"
+            ]
+        },
+        {
+            "id": "file_compression",
+            "desc": "File Compression Tool",
+            "domain": [
+                "Document",
+                "Agenda"
+            ]
+        },
+        {
+            "id": "business_travel_standard_search",
+            "desc": "Business Travel Standard Inquiry Tool",
+            "domain": [
+                "Travel",
+                "Flight"
+            ]
+        },
+        {
+            "id": "travel_journal",
+            "desc": "Travel Journal Tool",
+            "domain": [
+                "Document"
+            ]
+        },
+        {
+            "id": "event_planning_tool",
+            "desc": "Event planning tool, used for planning and managing various types of events",
+            "domain": [
+                "Other",
+                "Restaurant",
+                "Finance",
+                "Meeting",
+                "Music"
+            ]
+        },
+        {
+            "id": "account_balance_query",
+            "desc": "Account Balance Retrieval Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "appliance_repair_rescheduling",
+            "desc": "Request to adjust / change the appliance repair appointment time ",
+            "domain": [
+                "Repair"
+            ]
+        },
+        {
+            "id": "hotel_booking_modification",
+            "desc": "Hotel order modification interface, used to modify or upgrade existing hotel reservation orders. ",
+            "domain": [
+                "Hotel"
+            ]
+        },
+        {
+            "id": "modify_transaction",
+            "desc": "Modify the content of a transaction, based on the transaction ID",
+            "domain": [
+                "Restaurant",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "route_planning",
+            "desc": "Traffic Route Planning Tool",
+            "domain": [
+                "Meeting",
+                "Travel",
+                "Agenda",
+                "Other"
+            ]
+        },
+        {
+            "id": "car_rental_query",
+            "desc": "Car Rental Query Tool",
+            "domain": [
+                "Travel",
+                "Rental"
+            ]
+        },
+        {
+            "id": "table_booking_api",
+            "desc": "Restaurant table reservation",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "fixed_deposit_transaction",
+            "desc": "Handling fixed deposit transactions",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "anime_tracking_tool",
+            "desc": "Anime tracking tool that can track the release of new episodes of anime. The tracked anime includes 'Attack on Titan', 'Demon Slayer', 'My Hero Academia', and 'One Piece', etc.",
+            "domain": [
+                "Alarm",
+                "Other",
+                "Tracking",
+                "Movie",
+                "Document",
+                "Agenda"
+            ]
+        },
+        {
+            "id": "smart_appliance_control",
+            "desc": "Intelligent Appliance Control Tool",
+            "domain": [
+                "Other"
+            ]
+        },
+        {
+            "id": "virtual_classroom_reservation",
+            "desc": "Virtual classroom reservation tool, capable of reserving classrooms for Mathematics, Physics, and Programming courses",
+            "domain": [
+                "Meeting",
+                "Agenda",
+                "Other"
+            ]
+        },
+        {
+            "id": "get_repair_request_id",
+            "desc": "Get repair request ID",
+            "domain": [
+                "Repair"
+            ]
+        },
+        {
+            "id": "team_collaboration_tool",
+            "desc": "A tool that helps team collaboration and project management, capable of creating projects, adding team members, assigning tasks, and tracking task progress",
+            "domain": [
+                "Meeting",
+                "Travel",
+                "Agenda",
+                "Other"
+            ]
+        },
+        {
+            "id": "asset_checkout_approval",
+            "desc": "Asset checkout approval process tool for taking company assets off company premises",
+            "domain": [
+                "Travel",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "sleep_analysis_tool",
+            "desc": "Sleep Data Analysis Tool",
+            "domain": [
+                "Health"
+            ]
+        },
+        {
+            "id": "open_icbc_messenger_service",
+            "desc": "Tool for activating ICBC Messenger Service",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "parenting_advice_tool",
+            "desc": "Parenting Guidance Tool",
+            "domain": [
+                "Travel",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "check_file_existence",
+            "desc": "Check if the file at the specified path exists",
+            "domain": [
+                "Document"
+            ]
+        },
+        {
+            "id": "personal_tax_calculator",
+            "desc": "Personal Income Tax Calculator, calculates the tax rate for various types of income. Applicable to wages, self-employed individuals, etc.",
+            "domain": [
+                "Health",
+                "Travel",
+                "Document",
+                "Finance"
+            ]
+        },
+        {
+            "id": "create_agenda",
+            "desc": "Create a new agenda",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "car_rental_changing",
+            "desc": "Car Rental Reservation Modification Tool",
+            "domain": [
+                "Travel",
+                "Rental"
+            ]
+        },
+        {
+            "id": "cash_withdrawal_reservation",
+            "desc": "RMB cash withdrawal reservation tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "internal_purchase",
+            "desc": "Internal procurement of materials and tools",
+            "domain": [
+                "Travel",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "flight_search",
+            "desc": "Flight Search / Finding Tool",
+            "domain": [
+                "Flight",
+                "Travel",
+                "Finance",
+                "Document",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "notify_user",
+            "desc": "Send notifications through the user's preferred communication method",
+            "domain": [
+                "Travel",
+                "Repair",
+                "Finance",
+                "Train"
+            ]
+        },
+        {
+            "id": "stock_trend_predictor",
+            "desc": "Stock Market Trend Prediction Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "send_confirmation",
+            "desc": "Send confirmation message to user",
+            "domain": [
+                "Restaurant",
+                "Travel",
+                "Repair",
+                "Cleaning",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "calendar_note",
+            "desc": "Add calendar note",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "custom_product_service_messenger",
+            "desc": "Custom messenger tool for designated product services",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "travel_camera_rental",
+            "desc": "Travel Camera Rental Tool",
+            "domain": [
+                "Travel",
+                "Rental",
+                "Other"
+            ]
+        },
+        {
+            "id": "login_gear",
+            "desc": "Login Equipment Lookup Tool",
+            "domain": [
+                "Account",
+                "Tracking"
+            ]
+        },
+        {
+            "id": "place_order",
+            "desc": "Place an order based on dish information and table number",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "search_train",
+            "desc": "Search for train tickets based on preferences and return a list of train services that meet the criteria",
+            "domain": [
+                "Travel",
+                "Meeting",
+                "Train"
+            ]
+        },
+        {
+            "id": "book_restaurant",
+            "desc": "Restaurant Reservation Tool",
+            "domain": [
+                "Restaurant",
+                "Travel",
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "time_tracker",
+            "desc": "Track and manage your time",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "get_recent_transaction",
+            "desc": "Get the account's recent transaction records",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "desktop_organizer",
+            "desc": "This is a desktop organizer tool that can arrange the icons on the desktop, supporting sorting by name, type, size, and creation date",
+            "domain": [
+                "Other"
+            ]
+        },
+        {
+            "id": "advance_ticket_booking",
+            "desc": "This tool is used for booking tickets for various events, such as concerts, plays, movies, etc.",
+            "domain": [
+                "Movie",
+                "Travel",
+                "Meeting",
+                "Agenda",
+                "Music"
+            ]
+        },
+        {
+            "id": "insurance_customer_update",
+            "desc": "Update insurance customer's personal information",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "price_comparison_tool",
+            "desc": "Product price query and comparison tool",
+            "domain": [
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "transport_card_recharge",
+            "desc": "Public Transport Card Recharge Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "account_login",
+            "desc": "Account Login Tool",
+            "domain": [
+                "Other",
+                "Job",
+                "Tracking",
+                "Account",
+                "Finance",
+                "Meeting",
+                "Weather",
+                "Document",
+                "Agenda",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "insurance_claim_status",
+            "desc": "Query the status of insurance claim",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "tour_group_search",
+            "desc": "Search for tour groups based on destination, departure date, and budget range",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "send_business_message",
+            "desc": "Send business message",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "insurance_product_search",
+            "desc": "Insurance Product Query Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "credit_card_progress",
+            "desc": "Query the progress of credit card application/handling",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "business_trip_ticket_reservation",
+            "desc": "For business trip flight booking",
+            "domain": [
+                "Travel",
+                "Flight"
+            ]
+        },
+        {
+            "id": "send_confirmation_message",
+            "desc": "Send appointment confirmation message to user",
+            "domain": [
+                "Repair",
+                "Alarm",
+                "Agenda",
+                "Flight"
+            ]
+        },
+        {
+            "id": "news_headlines_generator",
+            "desc": "News Headlines Generation Tool",
+            "domain": [
+                "News",
+                "Finance"
+            ]
+        },
+        {
+            "id": "login_equipment_check",
+            "desc": "Login Equipment Check Tool",
+            "domain": [
+                "Tracking",
+                "Account",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "check_weather",
+            "desc": "Check the weather forecast for a specified date and location",
+            "domain": [
+                "Alarm",
+                "Flight",
+                "Travel",
+                "Repair",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "confirm_appointment",
+            "desc": "Confirm appointment information",
+            "domain": [
+                "Repair",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "calendar_annotation",
+            "desc": "Add annotations in the calendar",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "check_flight_availability",
+            "desc": "Check the seat availability of a specified flight",
+            "domain": [
+                "Flight"
+            ]
+        },
+        {
+            "id": "book_flight",
+            "desc": "Flight booking tool",
+            "domain": [
+                "Travel",
+                "Document",
+                "Flight"
+            ]
+        },
+        {
+            "id": "hotel_reservation_status",
+            "desc": "A tool for querying hotel reservation status",
+            "domain": [
+                "Hotel"
+            ]
+        },
+        {
+            "id": "family_interaction_tool",
+            "desc": "Parent-child interaction tool, providing activity suggestions suitable for children of different ages",
+            "domain": [
+                "Other",
+                "Music"
+            ]
+        },
+        {
+            "id": "send_meeting_invitations",
+            "desc": "Send meeting invitations",
+            "domain": [
+                "Agenda",
+                "Other",
+                "Finance",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "home_cleaning_changing",
+            "desc": "Home Cleaning Changing Tool ",
+            "domain": [
+                "Repair",
+                "Cleaning"
+            ]
+        },
+        {
+            "id": "merge_orders",
+            "desc": "Merge multiple orders into one order",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "file_write",
+            "desc": "Used to write content to a specified file. ",
+            "domain": [
+                "Document",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "geo_location_finder",
+            "desc": "Geographic Location Finder Tool",
+            "domain": [
+                "Travel",
+                "Other",
+                "Tracking"
+            ]
+        },
+        {
+            "id": "theme_park_attractions_search",
+            "desc": "Theme Park Facilities Query Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "currency_exchange_rate",
+            "desc": "Query the current exchange rate of a currency pair",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "ai_search_tool",
+            "desc": "An intelligent search tool capable of fuzzy and deep search",
+            "domain": [
+                "Movie",
+                "Rental",
+                "Other"
+            ]
+        },
+        {
+            "id": "document_share_tool",
+            "desc": "Document sharing tool, capable of permission control and version history management",
+            "domain": [
+                "Document"
+            ]
+        },
+        {
+            "id": "create_schedule",
+            "desc": "Create a schedule ",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "check_room_booking_status",
+            "desc": "Check the booking status of a specified meeting room for a specific date and time range",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "advanced_programming_lesson_planner",
+            "desc": "A course planning tool for advanced programming learners, providing input parameters such as programming language, total study duration, and study topics",
+            "domain": [
+                "Agenda",
+                "Other"
+            ]
+        },
+        {
+            "id": "hotel_booking",
+            "desc": "Complete the hotel room booking process",
+            "domain": [
+                "Travel",
+                "Flight",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "internal_person_search",
+            "desc": "Internal Staff Information Query Tool",
+            "domain": [
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "customer_service",
+            "desc": "Users contact customer service through the platform to submit questions and requests",
+            "domain": [
+                "Restaurant",
+                "Account",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "network_speedup_tool",
+            "desc": "Network Acceleration Tool",
+            "domain": [
+                "Repair",
+                "Other"
+            ]
+        },
+        {
+            "id": "email_marketing_tool",
+            "desc": "Email marketing tool that can send marketing emails to specified recipients",
+            "domain": [
+                "Job"
+            ]
+        },
+        {
+            "id": "clock_alarm_change",
+            "desc": "Change / Modify / Update an existing Alarm. ",
+            "domain": [
+                "Alarm",
+                "Agenda"
+            ]
+        },
+        {
+            "id": "select_hotel",
+            "desc": "Select a hotel from the list that offers the specified room type and has available dates",
+            "domain": [
+                "Hotel"
+            ]
+        },
+        {
+            "id": "mortgage_calculator_tool",
+            "desc": "A tool for calculating mortgage loans, capable of computing both equal principal and equal repayment methods",
+            "domain": [
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "archive_file_tool",
+            "desc": "File Archiving Tool",
+            "domain": [
+                "Document",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "conference_room_booking",
+            "desc": "Conference Room Booking Tool",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "product_inventory_search",
+            "desc": "Product Inventory Search Tool",
+            "domain": [
+                "Other",
+                "Tracking",
+                "Flight"
+            ]
+        },
+        {
+            "id": "job_skills_lookup",
+            "desc": "Job Skills Lookup Tool",
+            "domain": [
+                "Agenda",
+                "Meeting",
+                "Job"
+            ]
+        },
+        {
+            "id": "b_b_availability_check",
+            "desc": "B&B Availability Check Tool",
+            "domain": [
+                "Hotel"
+            ]
+        },
+        {
+            "id": "loan_application",
+            "desc": "Online Banking Loan Application Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "music_playback",
+            "desc": "Music Player Tool",
+            "domain": [
+                "Movie",
+                "Alarm",
+                "Document",
+                "Music"
+            ]
+        },
+        {
+            "id": "share_calendar",
+            "desc": "Share Calendar",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "generate_meeting_alert",
+            "desc": "Generate meeting alert",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "deposit_product_search",
+            "desc": "Deposit Product Inquiry",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "create_transaction",
+            "desc": "Create a new transaction for submitting merchant and customer transaction information to the platform",
+            "domain": [
+                "Restaurant",
+                "Finance"
+            ]
+        },
+        {
+            "id": "bank_balance_query",
+            "desc": "Query the balance information for a specified bank card number",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "complaint_merchant",
+            "desc": "Users complain about merchants to customer service through the platform",
+            "domain": [
+                "Restaurant",
+                "Account",
+                "Finance"
+            ]
+        },
+        {
+            "id": "movie_recommendation_tool",
+            "desc": "Personalized Movie Recommendation Tool",
+            "domain": [
+                "Movie"
+            ]
+        },
+        {
+            "id": "tourist_souvenir_creator",
+            "desc": "Tourist Souvenir Creation Tool",
+            "domain": [
+                "Travel",
+                "Other"
+            ]
+        },
+        {
+            "id": "login_system",
+            "desc": "User login verification tool",
+            "domain": [
+                "Document",
+                "Account",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "pet_care_tool",
+            "desc": "Pet care tool, used to help owners take better care of their pets",
+            "domain": [
+                "Health",
+                "Other"
+            ]
+        },
+        {
+            "id": "outdoor_navigator",
+            "desc": "Outdoor Navigation Tool",
+            "domain": [
+                "Travel",
+                "Other"
+            ]
+        },
+        {
+            "id": "exchange_rate_converter",
+            "desc": "Currency Exchange Rate Conversion Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "travel_itinerary_planner",
+            "desc": "Travel Itinerary Planning Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "sport_activity_recorder",
+            "desc": "Record and track users' sports data, including running, swimming, and cycling",
+            "domain": [
+                "Health",
+                "Finance"
+            ]
+        },
+        {
+            "id": "travel_assistant",
+            "desc": "Provides practical information for users traveling in different countries or regions, including weather forecasts, local languages, currency exchange rates, and recommended itineraries",
+            "domain": [
+                "Travel",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "book_ticket",
+            "desc": "Complete the ticket booking process",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "create_meeting_reminder",
+            "desc": "Create reminder for a reserved meeting ",
+            "domain": [
+                "Meeting",
+                "Weather"
+            ]
+        },
+        {
+            "id": "cruise_search",
+            "desc": "Cruise Search Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "add_reminder",
+            "desc": "Add reminder event",
+            "domain": [
+                "Alarm",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "book_table",
+            "desc": "Reserve a table",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "set_agenda_location",
+            "desc": "Set agenda location",
+            "domain": [
+                "Restaurant",
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "academic_achievement_query",
+            "desc": "Academic Achievement Query Tool",
+            "domain": [
+                "Document",
+                "Other"
+            ]
+        },
+        {
+            "id": "transit_card_info",
+            "desc": "Transit Card Information Query Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "souvenir_search",
+            "desc": "Travel Souvenir Search Tool",
+            "domain": [
+                "Travel",
+                "Other"
+            ]
+        },
+        {
+            "id": "travel_insurance_coverage",
+            "desc": "Travel Insurance Coverage Inquiry Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "foreign_currency_purchase",
+            "desc": "Foreign Exchange Purchase Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "credit_card_repayment",
+            "desc": "Credit Card Repayment",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "select_seats",
+            "desc": "Select flight seats ",
+            "domain": [
+                "Travel",
+                "Flight"
+            ]
+        },
+        {
+            "id": "foreign_currency_query",
+            "desc": "Query the amount of specific foreign currency held in the account",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "business_negotiation_tool",
+            "desc": "Business Negotiation Management Tool",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "identity_verification",
+            "desc": "Identity Verification Tool",
+            "domain": [
+                "Finance",
+                "Hotel",
+                "Train"
+            ]
+        },
+        {
+            "id": "credit_card_debt",
+            "desc": "Query credit card debt amount",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "professional_photography_tips",
+            "desc": "A tool providing photography techniques, including the effects of different lighting, composition tips, color matching suggestions, and camera settings",
+            "domain": [
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "deposit_product_selection",
+            "desc": "Deposit Product Selection Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "search_hotels",
+            "desc": "Search for hotels based on location, time, and user preferences",
+            "domain": [
+                "Travel",
+                "Flight",
+                "Hotel"
+            ]
+        },
+        {
+            "id": "domestic_remittance",
+            "desc": "Make a single remittance to a designated domestic account",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "headline_news_search",
+            "desc": "Headline News Search Tool",
+            "domain": [
+                "News",
+                "Finance"
+            ]
+        },
+        {
+            "id": "file_delete",
+            "desc": "Used to delete a file at a specified path. After performing file_write or file_modify operations, if the related file is no longer needed, this API can be executed to delete it.",
+            "domain": [
+                "Document",
+                "Other"
+            ]
+        },
+        {
+            "id": "login_equipment",
+            "desc": "Login Equipment Tool",
+            "domain": [
+                "Account",
+                "Other"
+            ]
+        },
+        {
+            "id": "send_meeting_notification",
+            "desc": "Send meeting notification",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "travel_camera_info",
+            "desc": "Travel Camera Information Query Tool",
+            "domain": [
+                "Travel",
+                "Rental",
+                "Other"
+            ]
+        },
+        {
+            "id": "get_dish_id",
+            "desc": "Get the dish ID based on the dish name",
+            "domain": [
+                "Restaurant"
+            ]
+        },
+        {
+            "id": "view_agenda",
+            "desc": "View schedule",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "create_todo",
+            "desc": "Set as to-do",
+            "domain": [
+                "Alarm",
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "update_contact_info",
+            "desc": "Update user's contact information",
+            "domain": [
+                "Repair",
+                "Finance",
+                "Account"
+            ]
+        },
+        {
+            "id": "conference_room_changing",
+            "desc": "Conference Room Reservation Change Tool",
+            "domain": [
+                "Meeting"
+            ]
+        },
+        {
+            "id": "ssh_connect",
+            "desc": "Connect to a server using SSH protocol",
+            "domain": [
+                "Document",
+                "Other"
+            ]
+        },
+        {
+            "id": "scenic_spot_ticket_search",
+            "desc": "Scenic Spot Ticket Inquiry Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "vehicle_tracker",
+            "desc": "Vehicle Tracking Tool",
+            "domain": [
+                "Tracking"
+            ]
+        },
+        {
+            "id": "train_ticket_changing",
+            "desc": "Change / Reschedule a Train Ticket ",
+            "domain": [
+                "Travel",
+                "Train"
+            ]
+        },
+        {
+            "id": "travelgroup_flight_search",
+            "desc": "Travel Group Flight Search Tool",
+            "domain": [
+                "Travel"
+            ]
+        },
+        {
+            "id": "account_security_check",
+            "desc": "Check the security of the account",
+            "domain": [
+                "Finance",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "appliance_repair_request",
+            "desc": "Appliance Repair Request Tool",
+            "domain": [
+                "Document",
+                "Repair"
+            ]
+        },
+        {
+            "id": "create_shared_calendar",
+            "desc": "Create shared calendar",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "digital_products_evaluation",
+            "desc": "Evaluate digital products, such as mobile phones, computers, cameras, etc.",
+            "domain": [
+                "Repair",
+                "Other"
+            ]
+        },
+        {
+            "id": "search_authorized_service_provider",
+            "desc": "Search for authorized repair service providers",
+            "domain": [
+                "Repair"
+            ]
+        },
+        {
+            "id": "package_status_tracker",
+            "desc": "Express package status tracking tool",
+            "domain": [
+                "Tracking"
+            ]
+        },
+        {
+            "id": "add_periodic_event",
+            "desc": "Add periodic event",
+            "domain": [
+                "Agenda",
+                "Meeting"
+            ]
+        },
+        {
+            "id": "travel_diary_generator",
+            "desc": "Travel Diary Generator",
+            "domain": [
+                "Travel",
+                "Document"
+            ]
+        },
+        {
+            "id": "account_logout",
+            "desc": "Account Logout Tool",
+            "domain": [
+                "Account",
+                "Finance"
+            ]
+        },
+        {
+            "id": "population_info_search",
+            "desc": "Population Information Query Tool",
+            "domain": [
+                "Document",
+                "Finance",
+                "Other"
+            ]
+        },
+        {
+            "id": "train_ticket_cancelling",
+            "desc": "Cancel for a Train Ticket ",
+            "domain": [
+                "Travel",
+                "Train"
+            ]
+        },
+        {
+            "id": "currency_conversion",
+            "desc": "Currency Conversion Tool",
+            "domain": [
+                "Finance"
+            ]
+        },
+        {
+            "id": "send_notifications",
+            "desc": "Send notifications to users",
+            "domain": [
+                "Alarm",
+                "Flight",
+                "Train",
+                "Travel",
+                "Repair",
+                "Finance",
+                "Meeting",
+                "Document",
+                "Agenda"
+            ]
+        }
+    ]
+}
