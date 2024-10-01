@@ -1,10 +1,10 @@
 # Can Graph Learning Improve Planning in LLM-based Agents?
 
 
-  [![Paper](https://img.shields.io/badge/Paper-arXiv%20Link-blue)](https://arxiv.org/abs/2405.19119)
+  [![Paper](https://img.shields.io/badge/Paper-arXiv%20Link-blue)](https://arxiv.org/abs/2405.19119)    
 
 
-This is the official implementation for our NeurIPS 2024 paper "Can Graph Learning Improve Planning in LLM-based Agents?"
+This is the official implementation for our NeurIPS 2024 paper "Can Graph Learning Improve Planning in LLM-based Agents?"  [[中文]](../README.assets/README_zh.md)
 
 ###  
 
