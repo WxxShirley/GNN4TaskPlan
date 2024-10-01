@@ -212,6 +212,8 @@ python main.py --lm_frozen=1 --epoch=10 --text_negative=1 --gnn_name=SAGE --lr=0
 
 # HuggingFace - LM+GNN co-train
 python main.py --lm_frozen=0 --epoch=20 --text_negative=1 --gnn_name=SAGE
+# HuggingFace - LM+GNN co-train (limited GPU requires smaller batch_size)
+python main.py --lm_frozen=0 --epoch=10 --text_negative=1 --gnn_name=SAGE --batch_size=256
 ```
 
 More running scripts can be found in `traingnn_reproduce.sh`. 
@@ -245,13 +247,13 @@ For evaluation, you have to specify the LLM's name, dataset, and the method (for
 python evaluate.py --llm=CodeLlama-13b --dataset=huggingface --method=direct
 ```
 
-And the result is as follows (`NF` - Node-F1, `LF` - Link-F1, `NH-1` - Micro Node Hallucination Rate, `NH-2` - Macro Node Hallucination Rate, `LH-1` - Micro Link Hallucination Rate, `LH-2` - Macro Link Hallucination Rate):
+And the result is as follows (`NF` - Node-F1, `LF` - Link-F1, `Acc` - Accuracy, `NH-1` - Micro Node Hallucination Rate, `NH-2` - Macro Node Hallucination Rate, `LH-1` - Micro Link Hallucination Rate, `LH-2` - Macro Link Hallucination Rate):
 ```
-+-------------+---------------+-------+--------+--------+--------+--------+--------+--------+
-|   Dataset   |      LLM      |  Mode |   NF   |   LF   |  NH-1  |  NH-2  |  LH-1  |  LH-2  |
-+-------------+---------------+-------+--------+--------+--------+--------+--------+--------+
-| huggingface | CodeLlama-13b | chain | 0.5755 | 0.2888 | 0.1656 | 0.4306 | 0.4228 | 0.6338 |
-+-------------+---------------+-------+--------+--------+--------+--------+--------+--------+
++-------------+---------------+-------+--------+--------+--------+--------+--------+--------+--------+
+|   Dataset   |      LLM      |  Mode |   NF   |   LF   |  Acc   |  NH-1  |  NH-2  |  LH-1  |  LH-2  |
++-------------+---------------+-------+--------+--------+--------+--------+--------+--------+--------+
+| huggingface | CodeLlama-13b | chain | 0.5755 | 0.2888 | 0.1429 | 0.1656 | 0.4306 | 0.4228 | 0.6338 |
++-------------+---------------+-------+--------+--------+--------+--------+--------+--------+--------+
 ```
 
 

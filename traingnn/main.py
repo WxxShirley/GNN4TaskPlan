@@ -44,6 +44,7 @@ def bi_evaluate(id_list, pred_dict, tmp_print=False):
 
         node_f1, link_f1 = f1_score(pred_node, gt_node), f1_score(pred_link, gt_link)
         search_node_f1, search_link_f1 = f1_score(search_node, gt_node), f1_score(search_link, gt_link)
+        init_succ, search_succ = float(node_f1 >= 0.99), float(search_node_f1 >= 0.99)
 
         if search_node_f1 > node_f1 and search_link_f1 > link_f1:
             succ_cnt += 1
@@ -51,8 +52,8 @@ def bi_evaluate(id_list, pred_dict, tmp_print=False):
         elif search_node_f1 < node_f1 and search_link_f1 < link_f1:
             fail_cnt += 1
 
-        init_scores.append([node_f1, link_f1])
-        searched_scores.append([search_node_f1, search_link_f1])
+        init_scores.append([node_f1, link_f1, init_succ])
+        searched_scores.append([search_node_f1, search_link_f1, search_succ])
 
     avg_pred_score = np.round(np.mean(np.array(init_scores), axis=0), 4)
     avg_searched_score = np.round(np.mean(np.array(searched_scores), axis=0), 4)
@@ -66,8 +67,10 @@ def bi_evaluate(id_list, pred_dict, tmp_print=False):
     return {
         "base-node-f1": avg_pred_score[0],
         "base-link-f1": avg_pred_score[1],
+        "base-acc": avg_pred_score[2],
         "search-node-f1": avg_searched_score[0],
         "search-link-f1": avg_searched_score[1],
+        "search-acc": avg_searched_score[2]
     }, [example[0] for example in high_fix_examples]
 
 
@@ -162,7 +165,7 @@ if __name__ == "__main__":
     tool_emb = controller.model.tool_forward(tool_texts, tool_adj).detach().cpu().numpy()
     
     table = pt.PrettyTable()
-    table.field_names = ["Dataset", "LLM", "LM", "GNN", "N-F1", "L-F1"]
+    table.field_names = ["Dataset", "LLM", "LM", "GNN", "N-F1", "L-F1", "Accuracy"]
     lm_name = args.lm_name.split('/')[-1]
     candidate_example_ids = set()
 
@@ -202,11 +205,11 @@ if __name__ == "__main__":
             else:
                 candidate_example_ids = candidate_example_ids & set(cur_candidates)
                 # print(candidate_example_ids)
-            table.add_row([args.dataset, base_llm, lm_name, method, score_dict['base-node-f1'], score_dict['base-link-f1']])
-            table.add_row([args.dataset, base_llm, lm_name, "+" + args.gnn_name, score_dict['search-node-f1'], score_dict['search-link-f1']])
+            table.add_row([args.dataset, base_llm, lm_name, method, score_dict['base-node-f1'], score_dict['base-link-f1'], score_dict["base-acc"]])
+            table.add_row([args.dataset, base_llm, lm_name, "+" + args.gnn_name, score_dict['search-node-f1'], score_dict['search-link-f1'], score_dict["search-acc"]])
     
     print(table)
-    print(candidate_example_ids)
+    # print(candidate_example_ids)
 
     print('\n## Finishing Time:', get_cur_time(), flush=True)
     print('= ' * 20)
