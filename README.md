@@ -27,6 +27,7 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
 
 ### 🔥 News
 
+- *Oct 14 2024* 📝 We posted the [second version](https://arxiv.org/pdf/2405.19119v2) of our paper, a Chinese [blog](https://zhuanlan.zhihu.com/p/936340518), and released the implementation of baseline method [GraphToken](https://arxiv.org/pdf/2402.05862). 
 - *Sep 26 2024* 🎉 Our paper is accepted by **NeurIPS 2024**. New version of paper, implementation of other baselines, and blogs will be released soon!
 - *May 30 2024* 📚 We posted the first version of our paper! 
 - *May 29 2024* 🚀 We released the datasets and codes of GNN4TaskPlan!
