@@ -15,6 +15,7 @@ if __name__ == "__main__":
     parser.add_argument('--llm', type=str, default="codellama/CodeLlama-7b-Instruct-hf")
     parser.add_argument('--device', type=str, default="cuda:0")
     parser.add_argument('--load_lora', type=bool, default=True)
+    # TODO: adjust the folder name based on actually saved LLM's checkpoint folder
     parser.add_argument('--lora_ckpt', type=str, default="CodeLlama-7b_seed0/checkpoint-5000")
     args = parser.parse_args()
     print(args, "\n")
@@ -23,6 +24,7 @@ if __name__ == "__main__":
     device = torch.device(args.device)
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
     tokenizer.pad_token_id = tokenizer.eos_token_id
+    tokenizer.padding_side = 'left'
     
     print(f'Load LoRA fine-tuned LLM {args.llm} from {args.dataset}_{args.lora_ckpt}')
     model = AutoPeftModelForCausalLM.from_pretrained(f"output/{args.dataset}_{args.lora_ckpt}")

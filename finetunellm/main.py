@@ -114,7 +114,8 @@ if __name__ == "__main__":
     device = torch.device(args.device)
     tokenizer = AutoTokenizer.from_pretrained(args.llm)
     tokenizer.pad_token_id = 0
-    
+    tokenizer.padding_side = 'left'
+
     alignment_ids = json.load(open(f"../data/{args.dataset}/split_ids.json", 'r'))["test_ids"]["chain"]
     train_ids = prepare_training_ids(args.dataset, alignment_ids=alignment_ids)
     data_contents = prepare_llm_training_data(args.dataset, train_ids=train_ids)
@@ -141,7 +142,8 @@ if __name__ == "__main__":
         inference_mode=False,
         r=8,
         lora_alpha=16,
-        lora_dropout=0.1
+        lora_dropout=0.1,
+        target_modules=["q_proj", "v_proj"]
     )
 
     kwargs = {
