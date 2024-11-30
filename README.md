@@ -19,7 +19,7 @@ Task planning aims to break down complex user request into solvable sub-tasks, t
 @inproceedings{wu2024graph,
   title={Can Graph Learning Improve Planning in LLM-based Agents?},
   author={Xixi Wu and Yifei Shen and Caihua Shan and Kaitao Song and Siwei Wang and Bohang Zhang and Jiarui Feng and Hong Cheng and Wei Chen and Yun Xiong and Dongsheng Li},
-  journal={Proceedings of Neural Information Processing Systems},
+  booktitle={Proceedings of Neural Information Processing Systems},
   year={2024}
 }
 ```
