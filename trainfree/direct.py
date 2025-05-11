@@ -19,6 +19,12 @@ async def inference_one_case(input, url, temperature, top_p, tool_string, write_
     else:
         prompt = """\n# GOAL #: Based on the above tools, I want you generate task steps and task nodes to solve the # USER REQUEST #. The format must in a strict JSON format, like: {"task_steps": [ "concrete steps, format as Step x: Call xxx tool with xxx: 'xxx' and xxx: 'xxx'" ], "task_nodes": [{"task": "task name must be from # TASK LIST #", "arguments": [ {"name": "parameter name", "value": "parameter value, either user-specified text or the specific name of the tool whose result is required by this node"} ]}], "task_links": [{"source": "task name i", "target": "task name j"}]}"""
         prompt += """\n\n# REQUIREMENTS #: \n1. the generated task steps and task nodes can resolve the given user request # USER REQUEST # perfectly. Task name must be selected from # TASK LIST #; \n2. the task steps should strictly aligned with the task nodes, and the number of task steps should be same with the task nodes; \n3. The task links (task_links) should reflect the temporal dependencies among task nodes, i.e. the order in which the APIs are invoked;"""
+    
+    # Example prompt for UltraTool 
+    # prompt = """\n# GOAL #: Based on the above tools, I want you generate task steps and task nodes to solve the # USER REQUEST #. The format must in a strict JSON format, like: {"task_steps": [ concrete steps, format as Step x: Call xxx tool to do xx], "task_nodes": [{"task": "task name must be from # TASK LIST #", "arguments": [ {"name": "parameter name", "value": "parameter value"} ]}], "task_links": [{"source": "task name i", "target": "task name j"}]}"""
+    # prompt += """\n\n# REQUIREMENTS #: \n1. the generated task steps and task nodes can resolve the given user request # USER REQUEST # perfectly. Task name must be selected from # TASK LIST #; \n2. the task steps should strictly aligned with the task nodes; \nThe task links (task_links) should reflect the temporal dependencies among task nodes, i.e. the order in which the APIs are invoked; \n"""
+    # prompt += """4. each step is a selected task to solve the user's request in a manageable way. \n"""
+    # prompt += """5. decomposed step must be short and do not have any arguments"""
 
     prompt += demo_string
     prompt += """\n\n# USER REQUEST #: {{user_request}}\nnow please generate your result in a strict JSON format:\n# RESULT #:"""
@@ -190,7 +196,8 @@ def main(dataset, temperature, top_p, api_addr, api_port, llm, use_demos, multiw
             "huggingface": ["10523150", "14611002", "22067492"],
             "multimedia": ["30934207", "20566230", "19003517"],
             "dailylife": ["27267145", "91005535", "38563456"],
-            "tmdb": [1]
+            "tmdb": [1],
+            "ultratool": ["691"]
         }
 
         demos_id = demos_id_list[dataset][:use_demos]
